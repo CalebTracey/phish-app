@@ -1,4 +1,4 @@
-const data = {
+const response = {
   success: true,
   total_entries: 1467,
   total_pages: 489,
@@ -54,3 +54,5 @@ const data = {
     },
   ],
 };
+
+export default response

@@ -56,7 +56,7 @@ class PhishApp extends Component {
             </div>
             <div className="content-pane">
               <Switch>
-                <Route exact path="/home">
+                <Route exact path="/">
                   <ContentPane choiceString={"home"} />
                 </Route>
                 <Route path="/about">

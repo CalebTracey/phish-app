@@ -5,9 +5,7 @@ import PhishApp from './PhishApp';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <PhishApp />
-  </React.StrictMode>,
+    <PhishApp />,
   document.getElementById('root')
 );
 

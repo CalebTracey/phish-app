@@ -9,7 +9,7 @@ import {
 const Year = (year) => {
     return (
         <div>
-            <Link to="/years/" {...year.year}>{year.year}</Link>
+            <Link to={"/years/" + year.year}>{year.year}</Link>
         </div>
     );
 };

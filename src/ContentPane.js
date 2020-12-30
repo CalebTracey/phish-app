@@ -13,6 +13,7 @@ import Search from './Navbar/Search';
 import Songs from './Navbar/Songs';
 import Tours from './Navbar/Tours';
 import Years from './Navbar/Years';
+import axios from './axios';
 
 class ContentPane extends Component {
     constructor(props) {
@@ -20,16 +21,49 @@ class ContentPane extends Component {
         this.state = {
             choice: this.props.choiceString,
             contentChoice: null,
+            display: null,
         }
     }
 
-    render() {
-        return (
-            <Router>
-                <div >
+    getData() {
+        // Make HTTP reques with Axios
+        console.log("API Call")
+        axios.get(this.state.contentChoice)
+            .then((res) => {
+                // Set state with result
+                switch (this.state.contentChoice) {
+                    case "/search":
+                        return this.setState({display: <Search input={res.data.data}/> });
+                    case "/years":
+                        return this.setState({display: <Years input={res.data.data}/>});
+                    case "/tours":
+                        return this.setState({display: <Tours input={res.data.data}/>});
+                    case "/songs":
+                        return this.setState({display: <Songs input={res.data.data}/>});
+                }
+            });
+    }
+    
+    goToContent() {
+        switch (this.state.choice) {
+            case "search":
+                return this.setState({contentChoice: "/search"});
+            case "years":
+                return this.setState({contentChoice: "/years"});
+            case "tours":
+                return this.setState({contentChoice: "/tours"});
+            case "songs":
+                return this.setState({contentChoice: "/songs"});
+        }
+        this.getData()
+    }
 
+    render() {
+        this.goToContent()
+        return (
+                <div>
+                    {this.state.display}
                 </div>
-            </Router>
         );
     }
 }

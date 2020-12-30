@@ -2,8 +2,7 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import {Navbar,Nav,Form,FormControl,Button} from "react-bootstrap"
 
-class TopNavBar extends PureComponent {
-  render() {
+const TopNavBar = () => {
     return (
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="#home">PhishApp</Navbar.Brand>
@@ -21,8 +20,6 @@ class TopNavBar extends PureComponent {
       </Navbar>
     );
   }
-}
 
-TopNavBar.propTypes = {};
 
 export default TopNavBar;

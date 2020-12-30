@@ -1,4 +1,4 @@
-import Show from './Show';
+import Show from '../Show';
 import './style.css';
 
 const ShowList = ({ shows }) => {

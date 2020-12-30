@@ -1,10 +1,10 @@
 import "./style.css";
 import "./index.css";
 import React, { Component } from "react";
-import Home from './Header/Home';
-import About from './Header/About';
-import Years from './Navbar/Years';
-import TopNavBar from './Navbar/TopNavBar';
+import Home from "./Header/Home";
+import About from "./Header/About";
+import Years from "./Navbar/Years";
+import TopNavBar from "./Navbar/TopNavBar";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class PhishApp extends Component {
@@ -19,27 +19,22 @@ class PhishApp extends Component {
   render() {
     return (
       <Router>
-                  
         <div className="wrapper">
-          {/* <div className="nav-bar">
-            <div className="nav-item">
-              <Link to="/">Home</Link>
-            </div>
-            <div className="nav-item">
-              <Link to="/about">About</Link>
-            </div>
-          </div> */}
-<TopNavBar/>
+          <TopNavBar />
           <div className="side-and-content">
             <div className="side-bar">
               <div className="nav-item">
-                <Link to="/search">Search</Link></div>
+                <Link to="/search">Search</Link>
+              </div>
               <div className="nav-item">
-                <Link to="/years">Years</Link></div>
+                <Link to="/years">Years</Link>
+              </div>
               <div className="nav-item">
-                <Link to="/tours">Tours</Link></div>
+                <Link to="/tours">Tours</Link>
+              </div>
               <div className="nav-item">
-                <Link to="/songs">Songs</Link></div>
+                <Link to="/songs">Songs</Link>
+              </div>
             </div>
             <div className="content-pane">
               <Switch>

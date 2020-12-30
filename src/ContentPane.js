@@ -27,6 +27,7 @@ class ContentPane extends Component {
 
     getData() {
         // Make HTTP reques with Axios
+        console.log("API Call")
         axios.get(this.state.contentChoice)
             .then((res) => {
                 // Set state with result
@@ -60,11 +61,9 @@ class ContentPane extends Component {
     render() {
         this.goToContent()
         return (
-            <Router>
                 <div>
                     {this.state.display}
                 </div>
-            </Router>
         );
     }
 }

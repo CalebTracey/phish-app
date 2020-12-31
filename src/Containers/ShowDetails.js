@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import axios from '../axios';
 import Show from '../Components/Show'
 
@@ -8,8 +7,9 @@ class ShowDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            show: null,
-            showIsDone: null
+            show: undefined,
+            isFetching: false,
+            showItem: null,
         }
     }
 
@@ -17,7 +17,7 @@ class ShowDetails extends Component {
         try {
             axios.get("shows/" + this.props.match.params.date)
                 .then((res) => {
-                    console.log(res.show)
+                    console.log(res.data)
                     this.setState({ show: res.data })
                 })
         } catch (err) {
@@ -27,17 +27,16 @@ class ShowDetails extends Component {
     }
 
     render() {
-        // if (this.state.show !== -1) {
-        //     this.setState({showIsDone: "Loading..."})
-        // } else { this.setState({showIsDone: <Show show={this.state.show} />}) }
-        //     return(
-        //         this.state.showIsDone
-        //     )
-        // }
-        return (<Show show={this.state.show} />)
+        this.state.showItem = this.state.show === undefined ? "Loading..." :
+        this.state = {
+            showItem: <Show show={this.state.show} />
+        }
+
+        return (
+            <div>
+                {this.state.showItem}
+            </div>
+        )
     }
-
-
 }
-
 export default ShowDetails;

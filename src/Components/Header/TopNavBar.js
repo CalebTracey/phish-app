@@ -1,5 +1,3 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
 import {Navbar,Nav,Form,FormControl,Button} from "react-bootstrap"
 
 const TopNavBar = () => {

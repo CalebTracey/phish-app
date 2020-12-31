@@ -1,18 +1,14 @@
 import "./style.css";
 import "./index.css";
-import React, { Component } from "react";
 import Home from "./Components/Header/Home";
 import About from "./Components/Header/About";
+import ShowDetails from './Containers/ShowDetails';
 import Years from "./Containers/Years";
 import YearShow from "./Containers/YearShow";
 import TopNavBar from "./Components/Header/TopNavBar";
-import { BrowserRouter as Router, Switch, Route, Link, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const PhishApp = () => {
-
-
-  //const {year} = useParams()
-  //const id = "2003"
 
   return (
     <Router>
@@ -37,34 +33,19 @@ const PhishApp = () => {
             <Switch>
               <Route exact path="/">
                 <Home />
-                {/* <ContentPane choiceString={"home"} /> */}
               </Route>
               <Route path="/about">
                 <About />
-                {/* <ContentPane choiceString={"about"} /> */}
               </Route>
-              {/* <Route path="/search">
-                  <ContentPane choiceString={"search"} />
-                </Route> */}
-              <Route exact path="/years">
-                <Years />
-              </Route>
-              <Route path="/years/:year" component = {YearShow}/>
-                {/* <YearShow year={year} />
-              </Route> */}
-              {/* <Route path="/tours">
-                  <Tours />
-                </Route> */}
-              {/* <Route path="/songs">
-                  <ContentPane choiceString={"songs"} />
-                </Route> */}
+              <Route exact path="/years" component={Years} />
+              <Route path="/years/:year" component={YearShow} />
+              <Route path="/shows/:date" component={ShowDetails} />
             </Switch>
           </div>
         </div>
         <div className="footer">&copy; 2021 Caleb Tracey</div>
       </div>
     </Router>
-
   );
 }
 

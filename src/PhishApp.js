@@ -2,41 +2,24 @@ import "./style.css";
 import "./index.css";
 import Home from "./Components/Header/Home";
 import About from "./Components/Header/About";
-import ShowDetails from './Containers/ShowDetails';
+import ShowDetails from "./Containers/ShowDetails";
 import Years from "./Containers/Years";
 import YearShow from "./Containers/YearShow";
 import TopNavBar from "./Components/Header/TopNavBar";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Sidebar from "./Components/Sidebar";
 
 const PhishApp = () => {
-
   return (
     <Router>
       <div className="wrapper">
         <TopNavBar />
         <div className="side-and-content">
-          <div className="side-bar">
-            <div className="nav-item">
-              <Link to="/search">Search</Link>
-            </div>
-            <div className="nav-item">
-              <Link to="/years">Years</Link>
-            </div>
-            <div className="nav-item">
-              <Link to="/tours">Tours</Link>
-            </div>
-            <div className="nav-item">
-              <Link to="/songs">Songs</Link>
-            </div>
-          </div>
+          <Sidebar />
           <div className="content-pane">
             <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/about">
-                <About />
-              </Route>
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
               <Route exact path="/years" component={Years} />
               <Route path="/years/:year" component={YearShow} />
               <Route path="/shows/:date" component={ShowDetails} />
@@ -47,6 +30,6 @@ const PhishApp = () => {
       </div>
     </Router>
   );
-}
+};
 
 export default PhishApp;

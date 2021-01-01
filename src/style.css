@@ -27,7 +27,7 @@
     width: 100%;
 }
 
-.side-bar {
+.sidebar {
     padding: 20px;
     display: flex;
     flex-direction: column;

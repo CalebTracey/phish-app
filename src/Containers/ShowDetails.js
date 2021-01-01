@@ -8,8 +8,8 @@ class ShowDetails extends Component {
         super(props);
         this.state = {
             show: undefined,
-            isFetching: false,
-            showItem: null,
+            //showItem: null,
+            isLoading: true,
         }
     }
 
@@ -18,7 +18,7 @@ class ShowDetails extends Component {
             axios.get("shows/" + this.props.match.params.date)
                 .then((res) => {
                     console.log(res.data)
-                    this.setState({ show: res.data })
+                    this.setState({ show: res.data.data, isLoading: false })
                 })
         } catch (err) {
             // Handle Error Here
@@ -27,15 +27,10 @@ class ShowDetails extends Component {
     }
 
     render() {
-        this.state.showItem = this.state.show === undefined ? "Loading..." :
-        this.state = {
-            showItem: <Show show={this.state.show} />
-        }
-
+        //let showItem = this.state.show
         return (
-            <div>
-                {this.state.showItem}
-            </div>
+            this.state.isLoading ? "Loading..." : <Show show={this.state.show}/>
+            //<div>{showItem}</div>
         )
     }
 }

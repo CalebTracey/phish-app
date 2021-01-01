@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import axios from '../axios';
 import ShowLinkList from '../Components/ShowLinkList';
 
@@ -7,7 +6,9 @@ class YearShow extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [],
+            showLinkListItem: null,
+            isLoading: true,
         }
     }
 
@@ -16,7 +17,7 @@ class YearShow extends Component {
             axios.get("years/" + this.props.match.params.year)
                 .then((res) => {
                     console.log(res.data)
-                    this.setState({ data: res.data.data })
+                    this.setState({ data: res.data.data, isLoading: false })
                 })
         } catch (err) {
             // Handle Error Here
@@ -25,16 +26,13 @@ class YearShow extends Component {
     }
 
     render() {
-        console.log("**********" + JSON.stringify(this.props))
+        //console.log("**********" + JSON.stringify(this.props))
+        let showLinkListItem = this.state.isLoading ? "Loading..." : <ShowLinkList shows={this.state.data} />
         return (
-            <ShowLinkList shows={this.state.data} />
 
+            <div>{showLinkListItem}</div>
         );
     }
 }
-
-// YearShow.propTypes = {
-//     year: PropTypes.string,
-// };
 
 export default YearShow

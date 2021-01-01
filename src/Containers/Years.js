@@ -6,7 +6,9 @@ class Years extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [],
+            yearLinkListItem: null,
+            isLoading: true,
         }
     }
 
@@ -15,7 +17,7 @@ class Years extends Component {
             axios.get("/years")
                 .then((res) => {
                     console.log(res.data)
-                    this.setState({ data: res.data.data })
+                    this.setState({ data: res.data.data, isLoading: false })
                 })
         } catch (err) {
             // Handle Error Here
@@ -25,8 +27,9 @@ class Years extends Component {
 
     render() {
         console.log(this.state.data);
+        let yearLinkListItem = this.state.isLoading ? "Loading..." : <YearLinkList data={this.state.data} />
         return (
-            <YearLinkList data={this.state.data} />
+                <div>{yearLinkListItem}</div>
         );
     }
 }

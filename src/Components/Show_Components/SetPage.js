@@ -35,7 +35,17 @@ const SetPage = (props) => {
             } if (indexSec < 10) {
                 indexSec = "0" + indexSec
             } return (indexHr + ":" + indexMin + ":" + indexSec)
-        } else if (setLength > min) {
+        } else if (setLength > min && indexHr == 0) {
+            while (setLength > min) {
+                setLength = setLength - min
+                indexMin++
+            } while (setLength > sec) {
+                setLength = setLength - sec
+                indexSec++
+            } if (indexSec < 10) {
+                indexSec = "0" + indexSec
+            } return (indexMin + ":" + indexSec)
+        } else if (setLength > min && indexHr != 0) {
             while (setLength > min) {
                 setLength = setLength - min
                 indexMin++

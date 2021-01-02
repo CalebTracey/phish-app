@@ -58,13 +58,20 @@ const Track = (props) => {
     }
 
     return (
-        <div className="track-info">
-            <div className="track-info-pos">{track.position}</div>
+        // <div className="track-info">
+        //     <div className="track-info-pos">{track.position}</div>
+        //     <div className="track-info-name-length">
+        //         <div className="track-info-title">{track.title}</div>
+        //         <div className="track-info-length">{convertLength(trackLength)}</div>
+        //     </div>
+        // </div>
+        <a class="list-group-item">
             <div className="track-info-name-length">
+                <div className="track-info-pos">{track.position}</div>
                 <div className="track-info-title">{track.title}</div>
                 <div className="track-info-length">{convertLength(trackLength)}</div>
             </div>
-        </div>
+        </a>
     );
 };
 

@@ -14,7 +14,7 @@ const TrackList = (props) => {
     });
 
     return (
-        <div>
+        <div class="list-group">
             {trackNode}
         </div>
     );

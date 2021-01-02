@@ -73,6 +73,9 @@
 }
 
 .field {
+    color: white;
+    box-shadow: 1px 1px 2px black;
+    text-shadow: 1px 1px 2px #000000;
     padding: 5px;
     border-radius: 5px;
     margin: 20px;
@@ -82,6 +85,9 @@
 }
 
 .set-title {
+    color: white;
+    box-shadow: 1px 1px 2px black;
+    text-shadow: 1px 1px 2px #000000;
     margin: 3px;
     font-size: 16px;
     font-size: 2.5vw;
@@ -97,6 +103,9 @@
 }
 
 .set-header {
+    color: white;
+    box-shadow: 1px 1px 2px black;
+    text-shadow: 1px 1px 2px #000000;
     flex-direction: row;
     border-radius: 5px;
     background: #8cc0f3;
@@ -105,6 +114,8 @@
 }
 
 .set-header-field {
+    color: white;
+    text-shadow: 1px 1px 2px #000000;
     align-content: space-around;
     margin-bottom: 0;
     display: flex;
@@ -114,6 +125,8 @@
 }
 
 .set-header-field-length {
+    color: white;
+    text-shadow: 1px 1px 2px #000000;
     align-content: space-around;
     margin-bottom: 0;
     display: flex;
@@ -123,41 +136,55 @@
 
 }
 
+.list-flex {
+    display:flex
+}
 .track-info {
+    
     display: flex;
     flex-direction: row;
     flex-grow: 11;
 }
 
 .track-info-pos {
+    /* box-shadow: 1px 1px 2px black; */
     width: 25px;    
     text-align: center;
     margin: 3px;
     padding: 3px;
-    background: #eaecee;
-    border-radius: 5px;
+    flex: 5% 11;
+
+    /* background: #eaecee;
+    border-radius: 5px; */
 
 }
 
 .track-info-name-length {
+    /* box-shadow: 1px 1px 2px black; */
     display: flex;
     flex: 11;
     margin: 3px;
     padding: 3px;
-    background: #eaecee;
-    border-radius: 5px;
+    /* background: #eaecee;
+    border-radius: 5px; */
 }
 
 .track-info-title {
     display: flex;
+    flex: 11;
+    margin: 3px;
+    padding: 3px;
     justify-content: flex-start;    
-    flex: 5;
+    flex: 95% 11;
     
 
 }
 
 .track-info-length {
     display: flex;
+    flex: 11;
+    margin: 3px;
+    padding: 3px;
     justify-content: flex-end;    
     flex: 5;
 
@@ -169,11 +196,13 @@
     justify-content: center;
 }
 
+.list-group {
+    padding: 0;
+}
 .show-row-1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-grow: 1;
 }
 
 .show-row-2 {

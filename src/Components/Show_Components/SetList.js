@@ -18,7 +18,6 @@ const SetList = (props) => {
             <div className="set-page">
                 <SetPage tracks={tracks} setKey={setKey} />
             </div>
-            
         )
     })
 

@@ -6,15 +6,10 @@ import SetList from './Show_Components/SetList'
 const Show = (props) => {
     let { show } = props
     return (
-        <div clasName="meta-data-comp">
-            <div>
-                <MetaData show={show} />
-            </div>
-            <div>
-                <SetList show={show} />
-            </div>
+        <div className="show-details">
+            <div className="meta"><MetaData show={show} /></div>
+            <div className="set-list"><SetList show={show} /></div>
         </div>
-
     );
 };
 

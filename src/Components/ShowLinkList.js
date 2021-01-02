@@ -7,9 +7,7 @@ const ShowLinkList = ({ shows}) => {
         return (<ShowLink show={show} key={show.id} />)
     });
     return (
-        <div>
             <div>{showNode}</div>
-        </div>
     );
 }
 

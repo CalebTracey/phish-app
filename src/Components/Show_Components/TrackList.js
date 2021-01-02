@@ -20,9 +20,9 @@ const TrackList = (props) => {
     );
 }
 
-// TrackList.propTypes = {
-//     tracks: PropTypes.array,
-//     key: PropTypes.string,
-// }
+TrackList.propTypes = {
+    tracks: PropTypes.array,
+    setKey: PropTypes.string,
+}
 
 export default TrackList;

@@ -2,10 +2,9 @@ import React from 'react';
 import SetPage from './SetPage'
 
 const SetList = (props) => {
-    let { show: { tracks, duration } } = props
+    let { show: { tracks } } = props
 
-    //["1","2","E"]
-    console.log("*********TRACKS" + JSON.stringify(tracks))
+    //console.log("*********TRACKS" + JSON.stringify(tracks))
     let sets = tracks.map((track) => {
         return (track.set)
     })
@@ -14,15 +13,18 @@ const SetList = (props) => {
 
     //console.log("*********SETS" + JSON.stringify(one))
 
-    const setNodes = setKeys.map((key) => {
+    const setNodes = setKeys.map((setKey) => {
         return (
-            <div><SetPage tracks={tracks} duration={duration} setKey={key} /></div>
+            <div className="set-page">
+                <SetPage tracks={tracks} setKey={setKey} />
+            </div>
+            
         )
     })
 
     return (
-        <div>
-            <h2>Set List</h2>
+        <div className="set-details">
+            <h2 className="set-title">Set List</h2>
             {setNodes}
         </div>
     );

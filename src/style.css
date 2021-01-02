@@ -27,7 +27,7 @@
     width: 100%;
 }
 
-.side-bar {
+.sidebar {
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -50,8 +50,103 @@
     padding-top: 1em;
 }
 
-.show {
-    padding: 20px;
+.show-details {
+    
+    display: flex;
+    flex-direction: row;
+    flex-grow: 11;
+}
+
+.meta{
+    justify-content: top;
+}
+
+.meta-data{
+    flex-direction: column;
+    justify-content: top;
+    
+}
+
+.set-list {
+    padding: 5px;
+    margin: 20px;
+    display: flex;
+    flex-grow: 11;
+}
+
+.field {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 20px;
+    font-size: 16px;
+    font-size: 2.5vw;
+    background: #8cc0f3;
+
+}
+
+.set-title {
+    font-size: 16px;
+    font-size: 2.5vw;
+    border-radius: 5px;
+    background: #8cc0f3;
+}
+
+.set-details {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 11;
+}
+
+.set-header {
+    border-radius: 5px;
+    background: #8cc0f3;
+    display: flex;
+}
+
+.set-header-field {
+    display: flex;
+    padding: 5px;
+    text-align: left;
+    flex: 5;
+}
+
+.set-header-field-length {
+    display: flex;
+    padding: 5px;
+    justify-content: flex-end;    
+    flex: 5;
+
+}
+
+.track-info {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 11;
+}
+
+.track-info-pos {
+    display: flex;
+    text-align: center;
+    flex: 1;
+}
+
+.track-info-title {
+    display: flex;
+    justify-content: flex-start;    
+    flex: 5;
+}
+
+.track-info-length {
+    display: flex;
+    justify-content: flex-end;    
+    flex: 1;
+}
+
+.year-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .show-row-1 {
@@ -67,6 +162,7 @@
 
 .show-field {
     padding: 10px;
+    
 }
 
 .taper-notesOFF {

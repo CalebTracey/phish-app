@@ -8,7 +8,6 @@ class ShowDetails extends Component {
         super(props);
         this.state = {
             show: undefined,
-            //showItem: null,
             isLoading: true,
         }
     }
@@ -27,10 +26,8 @@ class ShowDetails extends Component {
     }
 
     render() {
-        //let showItem = this.state.show
         return (
             this.state.isLoading ? "Loading..." : <Show show={this.state.show}/>
-            //<div>{showItem}</div>
         )
     }
 }

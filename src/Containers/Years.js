@@ -29,7 +29,7 @@ class Years extends Component {
         console.log(this.state.data);
         let yearLinkListItem = this.state.isLoading ? "Loading..." : <YearLinkList data={this.state.data} />
         return (
-                <div>{yearLinkListItem}</div>
+                <div className="year-list">{yearLinkListItem}</div>
         );
     }
 }

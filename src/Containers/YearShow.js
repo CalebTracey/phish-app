@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from '../axios';
 import ShowLinkList from '../Components/ShowLinkList';
+import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
+
 
 class YearShow extends Component {
     constructor(props) {
@@ -29,8 +31,18 @@ class YearShow extends Component {
         //console.log("**********" + JSON.stringify(this.props))
         let showLinkListItem = this.state.isLoading ? "Loading..." : <ShowLinkList shows={this.state.data} />
         return (
+            <Navbar bg="light" expand="sm">
+                <Nav >
+                    <div class="container">
+                        <div class="nav-link">
+                            <div class="btn-group-vertical">
+                                {showLinkListItem}
+                            </div>
+                        </div>
 
-            <div>{showLinkListItem}</div>
+                    </div>
+                </Nav>
+            </Navbar >
         );
     }
 }

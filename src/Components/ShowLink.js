@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
 
-const ShowLink = ({show}) => {
+
+const ShowLink = ({ show }) => {
     return (
-        <div>
-            <Link to={"/shows/" + show.date}>{show.date} {show.venue.name}</Link>
-        </div>
+        // <Nav>
+            <button type="button" class="btn btn-primary shows">
+                <Nav.Link href={"/shows/" + show.date}>{show.date} {show.venue.name}</Nav.Link>
+            </button>
+        // // </Nav>
             
+/* <a href= {"/shows/" + show.date}>{show.date} {show.venue.name} </a> */
+
     );
 };
 

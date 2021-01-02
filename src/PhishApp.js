@@ -16,16 +16,21 @@ const PhishApp = () => {
         <TopNavBar />
         <div className="side-and-content">
           <Sidebar />
+          {/* <div class="container"> */}
           <div className="content-pane">
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
               <Route exact path="/years" component={Years} />
+              
               <Route path="/years/:year" component={YearShow} />
+              
               <Route path="/shows/:date" component={ShowDetails} />
             </Switch>
           </div>
-        </div>
+          </div>
+          
+        {/* </div> */}
         <div className="footer">&copy; 2021 Caleb Tracey</div>
       </div>
     </Router>

@@ -4,10 +4,10 @@ const Track = (props) => {
     let { track } = props
 
     return (
-        <div>
-            <div>{track.position}</div>
-            <div>{track.title}</div>
-            <div>{track.duration}</div>
+        <div className="track-info">
+            <div className="track-info-pos">{track.position}</div>
+            <div className="track-info-title">{track.title}</div>
+            <div className="track-info-length">{track.duration}</div>
         </div>
     );
 };

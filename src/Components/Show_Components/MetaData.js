@@ -4,9 +4,9 @@ const MetaData = (props) => {
     let {show: {date, venue_name, venue}} = props
     return (
         <div className="meta-data">
-            <div className="field">{date}</div>
-            <div className="field">{venue_name}</div>
-            <div className="field">{venue.location}</div>
+            <h2 className="field">{date}</h2>
+            <h2 className="field">{venue_name}</h2>
+            <h2 className="field">{venue.location}</h2>
         </div>
 
     );

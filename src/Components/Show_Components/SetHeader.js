@@ -5,8 +5,8 @@ const SetHeader = (props) => {
 
     return (
         <div className="set-header">
-            <div className="set-header-field">Set {setKey}</div>
-            <div className="set-header-field-length">Length: {duration}</div>
+            <h6 className="set-header-field">Set {setKey}</h6>
+            <h6 className="set-header-field-length">Length: {duration}</h6>
         </div>
     );
 };

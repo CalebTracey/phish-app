@@ -13,6 +13,9 @@ const PhishApp = () => {
   return (
     <Router>
       <div className="wrapper">
+        <audio className="audio-element">
+          <source id="audio-element-source"></source>
+        </audio>
         <TopNavBar />
         <div className="side-and-content">
           <Sidebar />

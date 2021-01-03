@@ -39,7 +39,7 @@ class Track extends Component {
         indexSec = "0" + indexSec;
       }
       return indexHr + ":" + indexMin + ":" + indexSec;
-    } else if (trackLength > min && indexHr == 0) {
+    } else if (trackLength > min && indexHr === 0) {
       while (trackLength > min) {
         trackLength = trackLength - min;
         indexMin++;
@@ -52,7 +52,7 @@ class Track extends Component {
         indexSec = "0" + indexSec;
       }
       return indexMin + ":" + indexSec;
-    } else if (trackLength > min && indexHr != 0) {
+    } else if (trackLength > min && indexHr !== 0) {
       while (trackLength > min) {
         trackLength = trackLength - min;
         indexMin++;
@@ -80,9 +80,12 @@ class Track extends Component {
     }
   }
 
-    playAudio() {
-    const audioEl = document.getElementsByClassName("audio-element-"+this.props.track.id)[0]
+playAudio() {
+    const audioEl = document.getElementsByClassName("audio-element")[0]
     if (audioEl !== undefined) {
+        const source = document.getElementById('audio-element-source');
+        source.src = this.props.track.mp3;
+        audioEl.load()
         audioEl.play()
     }
   }
@@ -98,9 +101,7 @@ class Track extends Component {
         //     </div>
         // </div>
         <div>      <div>
-        <audio className={"audio-element-"+track.id}>
-        <source src={track.mp3}></source>
-        </audio>
+
     </div>
         <a className="list-group-item">
         <div className="track-info-name-length">

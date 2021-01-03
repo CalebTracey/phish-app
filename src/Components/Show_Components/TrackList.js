@@ -10,11 +10,11 @@ const TrackList = (props) => {
     });
 
     const trackNode = setTracks.map((track) => {
-        return <Track track={track} />;
+        return <Track track={track} id={track.id}/>;
     });
 
     return (
-        <div class="list-group">
+        <div className="list-group">
             {trackNode}
         </div>
     );

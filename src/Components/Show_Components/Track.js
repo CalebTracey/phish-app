@@ -1,15 +1,13 @@
-import { render } from '@testing-library/react';
-import React, { Component } from 'react';
+import { render } from "@testing-library/react";
+import React, { Component } from "react";
 
 class Track extends Component {
+  constructor(props) {
+    super(props);
+    this.playAudio = this.playAudio.bind(this);
+  }
 
-    constructor(props) {
-        super(props);
-        this.playAudio = this.playAudio.bind(this);
-    }
-
-
-    convertLength() {
+  convertLength() {
     let { track } = this.props;
     let trackLength = track.duration;
     const hr = 3600000;
@@ -80,40 +78,37 @@ class Track extends Component {
     }
   }
 
-playAudio() {
-    const audioEl = document.getElementsByClassName("audio-element")[0]
+  playAudio() {
+    const audioEl = document.getElementsByClassName("audio-element")[0];
     if (audioEl !== undefined) {
-        const source = document.getElementById('audio-element-source');
-        source.src = this.props.track.mp3;
-        audioEl.load()
-        audioEl.play()
+      const source = document.getElementById("audio-element-source");
+      source.src = this.props.track.mp3;
+      audioEl.load();
+      audioEl.play();
     }
   }
 
   render() {
-      let {track} = this.props
+    let { track } = this.props;
     return (
-        // <div className="track-info">
-        //     <div className="track-info-pos">{track.position}</div>
-        //     <div className="track-info-name-length">
-        //         <div className="track-info-title">{track.title}</div>
-        //         <div className="track-info-length">{convertLength(trackLength)}</div>
-        //     </div>
-        // </div>
-        <div>      <div>
-
-    </div>
+      <div>
+        {" "}
+        <div></div>
         <a className="list-group-item">
-        <div className="track-info-name-length">
+          <div className="track-info-name-length">
             <div className="track-info-pos">{track.position}</div>
             <div className="track-info-title">{track.title}</div>
             <div className="track-info-length glyphicon glyphicon-play-circle">
-                <button className="btn"><i className="fa fa-play" onClick={this.playAudio}></i></button>
+              <button className="btn">
+                <i className="fa fa-play" onClick={this.playAudio}></i>
+              </button>
             </div>
-            <div className="track-info-length">{this.convertLength(track.duration)}</div>
-        </div>
+            <div className="track-info-length">
+              {this.convertLength(track.duration)}
+            </div>
+          </div>
         </a>
-        </div>
+      </div>
     );
   }
 }

@@ -247,3 +247,7 @@
 max-height: 600px;
 overflow-x: scroll}  
 
+.text-box {
+    text-justify: auto;
+    margin: 20px;
+}

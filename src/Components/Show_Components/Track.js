@@ -1,62 +1,94 @@
-import React from 'react';
+import { render } from '@testing-library/react';
+import React, { Component } from 'react';
 
-const Track = (props) => {
-    let { track } = props
-    let trackLength = track.duration
-    const hr = 3600000
-    const min = 60000
-    const sec = 1000
+class Track extends Component {
 
-    function convertLength() {
-        var indexHr = 0, indexMin = 0, indexSec = 0
-
-        if (trackLength > hr) {
-            while (trackLength > hr) {
-                trackLength = trackLength - hr
-                indexHr++
-            } while (trackLength > min) {
-                trackLength = trackLength - min
-                indexMin++
-            } if (indexMin < 10) {
-                indexMin = "0" + indexMin
-            } while (trackLength > sec) {
-                trackLength = trackLength - sec
-                indexSec++
-            } if (indexSec < 10) {
-                indexSec = "0" + indexSec
-            } return (indexHr + ":" + indexMin + ":" + indexSec)
-        } else if (trackLength > min && indexHr == 0) {
-            while (trackLength > min) {
-                trackLength = trackLength - min
-                indexMin++
-            } while (trackLength > sec) {
-                trackLength = trackLength - sec
-                indexSec++
-            } if (indexSec < 10) {
-                indexSec = "0" + indexSec
-            } return (indexMin + ":" + indexSec)
-        } else if (trackLength > min && indexHr != 0) {
-            while (trackLength > min) {
-                trackLength = trackLength - min
-                indexMin++
-            } if (indexMin < 10) {
-                indexMin = "0" + indexMin
-            } while (trackLength > sec) {
-                trackLength = trackLength - sec
-                indexSec++
-            } if (indexSec < 10) {
-                indexSec = "0" + indexSec
-            } return (indexMin + ":" + indexSec)
-        } else {
-            while (trackLength > sec) {
-                trackLength = trackLength - sec
-                indexSec++
-            } if (indexSec < 10) {
-                indexSec = "0" + indexSec
-            } return (indexSec + "seconds")
-        }
+    constructor(props) {
+        super(props);
+        this.playAudio = this.playAudio.bind(this);
     }
 
+
+    convertLength() {
+    let { track } = this.props;
+    let trackLength = track.duration;
+    const hr = 3600000;
+    const min = 60000;
+    const sec = 1000;
+    var indexHr = 0,
+      indexMin = 0,
+      indexSec = 0;
+
+    if (trackLength > hr) {
+      while (trackLength > hr) {
+        trackLength = trackLength - hr;
+        indexHr++;
+      }
+      while (trackLength > min) {
+        trackLength = trackLength - min;
+        indexMin++;
+      }
+      if (indexMin < 10) {
+        indexMin = "0" + indexMin;
+      }
+      while (trackLength > sec) {
+        trackLength = trackLength - sec;
+        indexSec++;
+      }
+      if (indexSec < 10) {
+        indexSec = "0" + indexSec;
+      }
+      return indexHr + ":" + indexMin + ":" + indexSec;
+    } else if (trackLength > min && indexHr == 0) {
+      while (trackLength > min) {
+        trackLength = trackLength - min;
+        indexMin++;
+      }
+      while (trackLength > sec) {
+        trackLength = trackLength - sec;
+        indexSec++;
+      }
+      if (indexSec < 10) {
+        indexSec = "0" + indexSec;
+      }
+      return indexMin + ":" + indexSec;
+    } else if (trackLength > min && indexHr != 0) {
+      while (trackLength > min) {
+        trackLength = trackLength - min;
+        indexMin++;
+      }
+      if (indexMin < 10) {
+        indexMin = "0" + indexMin;
+      }
+      while (trackLength > sec) {
+        trackLength = trackLength - sec;
+        indexSec++;
+      }
+      if (indexSec < 10) {
+        indexSec = "0" + indexSec;
+      }
+      return indexMin + ":" + indexSec;
+    } else {
+      while (trackLength > sec) {
+        trackLength = trackLength - sec;
+        indexSec++;
+      }
+      if (indexSec < 10) {
+        indexSec = "0" + indexSec;
+      }
+      return indexSec + "seconds";
+    }
+  }
+
+    playAudio() {
+    const audioEl = document.getElementsByClassName("audio-element-"+this.props.track.id)[0]
+    if (audioEl !== undefined) {
+        audioEl.play()
+    }
+  }
+
+  render() {
+      let {track} = this.props
     return (
         // <div className="track-info">
         //     <div className="track-info-pos">{track.position}</div>
@@ -65,14 +97,24 @@ const Track = (props) => {
         //         <div className="track-info-length">{convertLength(trackLength)}</div>
         //     </div>
         // </div>
-        <a class="list-group-item">
-            <div className="track-info-name-length">
-                <div className="track-info-pos">{track.position}</div>
-                <div className="track-info-title">{track.title}</div>
-                <div className="track-info-length">{convertLength(trackLength)}</div>
+        <div>      <div>
+        <audio className={"audio-element-"+track.id}>
+        <source src={track.mp3}></source>
+        </audio>
+    </div>
+        <a className="list-group-item">
+        <div className="track-info-name-length">
+            <div className="track-info-pos">{track.position}</div>
+            <div className="track-info-title">{track.title}</div>
+            <div className="track-info-length glyphicon glyphicon-play-circle">
+                <button className="btn"><i className="fa fa-play" onClick={this.playAudio}></i></button>
             </div>
+            <div className="track-info-length">{this.convertLength(track.duration)}</div>
+        </div>
         </a>
+        </div>
     );
-};
+  }
+}
 
 export default Track;

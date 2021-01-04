@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React, { Component } from "react";
 
 class Track extends Component {
@@ -78,6 +77,7 @@ class Track extends Component {
     }
   }
 
+  // hacky node manipulation. AudioPlayer should be a component.
   playAudio() {
     const audioEl = document.getElementsByClassName("audio-element")[0];
     if (audioEl !== undefined) {
@@ -91,23 +91,19 @@ class Track extends Component {
   render() {
     let { track } = this.props;
     return (
-      <div>
-        {" "}
-        <div></div>
-        <a className="list-group-item">
-          <div className="track-info-name-length">
-            <div className="track-info-pos">{track.position}</div>
-            <div className="track-info-title">{track.title}</div>
-            <div className="track-info-length glyphicon glyphicon-play-circle">
-              <button className="btn">
-                <i className="fa fa-play" onClick={this.playAudio}></i>
-              </button>
-            </div>
-            <div className="track-info-length">
-              {this.convertLength(track.duration)}
-            </div>
+      <div className="list-group-item">
+        <div className="track-info-name-length">
+          <div className="track-info-pos">{track.position}</div>
+          <div className="track-info-title">{track.title}</div>
+          <div className="track-info-length glyphicon glyphicon-play-circle">
+            <button className="btn">
+              <i className="fa fa-play" onClick={this.playAudio}></i>
+            </button>
           </div>
-        </a>
+          <div className="track-info-length">
+            {this.convertLength(track.duration)}
+          </div>
+        </div>
       </div>
     );
   }

@@ -303,3 +303,37 @@
     position: relative;
   
   }
+
+  .tours-center {
+    display: flex;
+    justify-content: center;
+}
+
+.tours-text {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+  height: fit-content;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+
+.songs-center {
+    display: flex;
+    justify-content: center;
+}
+
+.songs-text {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+  height: fit-content;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}

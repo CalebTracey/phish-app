@@ -54,12 +54,15 @@
     flex-grow: 11;
 }
 
-.meta{
+/* .meta{
     display: flex;
-}
+} */
 
 .meta-data{
-    margin: 3px;
+    position:sticky;
+    top: 20px;
+    display:flex;
+    padding: 20px;    
     flex-direction: column;
     justify-content: top;
 }

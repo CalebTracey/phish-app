@@ -4,6 +4,8 @@ import Home from "./Components/Header/Home";
 import About from "./Components/Header/About";
 import ShowDetails from "./Containers/ShowDetails";
 import Years from "./Containers/Years";
+import Tours from "./Containers/Tours";
+import Songs from "./Containers/Songs";
 import YearShow from "./Containers/YearShow";
 import TopNavBar from "./Components/Header/TopNavBar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -24,6 +26,8 @@ const PhishApp = () => {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
+              <Route path="/tours" component={Tours} />
+              <Route path="/songs" component={Songs} />
               <Route exact path="/years" component={Years} />
               
               <Route path="/years/:year" component={YearShow} />

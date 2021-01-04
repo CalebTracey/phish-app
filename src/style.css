@@ -54,11 +54,11 @@
     flex-grow: 11;
 }
 
-/* .meta{
-    display: flex;
-} */
+.meta{
+    width: 40%;}
 
 .meta-data{
+    text-align: center;
     position:sticky;
     top: 20px;
     display:flex;

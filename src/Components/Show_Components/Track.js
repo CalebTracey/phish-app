@@ -85,7 +85,7 @@ class Track extends Component {
       audioEl.load();
       audioEl.play();
     }
-
+  }
 
   render() {
     let { track } = this.props;

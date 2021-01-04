@@ -29,9 +29,7 @@ const PhishApp = () => {
               <Route path="/tours" component={Tours} />
               <Route path="/songs" component={Songs} />
               <Route exact path="/years" component={Years} />
-              
               <Route path="/years/:year" component={YearShow} />
-              
               <Route path="/shows/:date" component={ShowDetails} />
             </Switch>
           </div>

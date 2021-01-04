@@ -1,23 +1,7 @@
-//import HeroImage from './HeroImage/PhishApp.jpg';
-
-
-// const Home = ({ }) => {
-//   return (
-//     // <div class="container">
-//     // {/* <img className="hero-image" src={HeroImage} alt="hero-text" /> */ }
-
-
-
-//   );
-// }
-
-//export default Home
-
 import React, { Component } from 'react';
 import YearLinkList from '../YearLinkList';
 import axios from '../../axios';
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
-
 
 class Home extends Component {
   constructor(props) {
@@ -46,8 +30,6 @@ class Home extends Component {
     console.log(this.state.data);
     let yearLinkListItem = this.state.isLoading ? "Loading..." : <YearLinkList data={this.state.data} />
     return (
-      // <div >
-
 
       <div class="container">
 

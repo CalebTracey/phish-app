@@ -3,12 +3,12 @@ import {Navbar,Nav,Form,FormControl,Button} from "react-bootstrap"
 const TopNavBar = () => {
     return (
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">PhishApp</Navbar.Brand>
+        <Navbar.Brand href="/PhishApp">PhishApp</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="about">About</Nav.Link>
+            <Nav.Link href="/PhishApp">Home</Nav.Link>
+            <Nav.Link href="/PhishApp/about">About</Nav.Link>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />

@@ -4,13 +4,13 @@ const Sidebar = () => {
   return (
     <Navbar bg="light" className="sidebar">
       <Nav className="mr-auto">
-        <Nav.Link href="/years">Years</Nav.Link>
+        <Nav.Link href="/PhishApp/years">Years</Nav.Link>
       </Nav>
       <Nav className="mr-auto">
-        <Nav.Link href="/tours">Tours</Nav.Link>
+        <Nav.Link href="/PhishApp/tours">Tours</Nav.Link>
       </Nav>
       <Nav className="mr-auto">
-        <Nav.Link href="/songs">Songs</Nav.Link>
+        <Nav.Link href="/PhishApp/songs">Songs</Nav.Link>
       </Nav>
     </Navbar>
   );

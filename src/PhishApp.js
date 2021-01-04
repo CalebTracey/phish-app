@@ -24,15 +24,13 @@ const PhishApp = () => {
           {/* <div class="container"> */}
           <div className="content-pane">
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/tours" component={Tours} />
-              <Route path="/songs" component={Songs} />
-              <Route exact path="/years" component={Years} />
-              
-              <Route path="/years/:year" component={YearShow} />
-              
-              <Route path="/shows/:date" component={ShowDetails} />
+              <Route exact path="/PhishApp" component={Home} />
+              <Route path="/PhishApp/about" component={About} />
+              <Route path="/PhishApp/tours" component={Tours} />
+              <Route path="/PhishApp/songs" component={Songs} />
+              <Route exact path="/PhishApp/years" component={Years} />              
+              <Route path="/PhishApp/years/:year" component={YearShow} />
+              <Route path="/PhishApp/shows/:date" component={ShowDetails} />
             </Switch>
           </div>
           </div>

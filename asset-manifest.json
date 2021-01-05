@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/PhishApp/static/css/main.33eccb38.chunk.css",
-    "main.js": "/PhishApp/static/js/main.1bb8024d.chunk.js",
-    "main.js.map": "/PhishApp/static/js/main.1bb8024d.chunk.js.map",
+    "main.js": "/PhishApp/static/js/main.3c230a2b.chunk.js",
+    "main.js.map": "/PhishApp/static/js/main.3c230a2b.chunk.js.map",
     "runtime-main.js": "/PhishApp/static/js/runtime-main.5d6ad9e5.js",
     "runtime-main.js.map": "/PhishApp/static/js/runtime-main.5d6ad9e5.js.map",
     "static/js/2.7960b5d2.chunk.js": "/PhishApp/static/js/2.7960b5d2.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.5d6ad9e5.js",
     "static/js/2.7960b5d2.chunk.js",
     "static/css/main.33eccb38.chunk.css",
-    "static/js/main.1bb8024d.chunk.js"
+    "static/js/main.3c230a2b.chunk.js"
   ]
 }

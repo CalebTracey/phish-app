@@ -73,7 +73,7 @@ class Track extends Component {
             if (indexSec < 10) {
                 indexSec = "0" + indexSec;
             }
-            return indexSec + "seconds";
+            return ":"+indexSec;
         }
     }
   // hacky node manipulation. AudioPlayer should be a component.

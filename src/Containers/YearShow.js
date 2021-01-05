@@ -34,10 +34,9 @@ class YearShow extends Component {
             <Navbar bg="light" expand="sm">
                 <Nav >
                     <div class="container bvg">
-                        
-                            <div class="btn-group-vertical">
-                                {showLinkListItem}
-                            </div>
+                        <div class="btn-group-vertical">
+                            {showLinkListItem}
+                        </div>
                     </div>
                 </Nav>
             </Navbar >

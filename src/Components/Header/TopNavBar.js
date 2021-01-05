@@ -1,6 +1,7 @@
 import {Navbar,Nav,Form,FormControl,Button} from "react-bootstrap"
 
 const TopNavBar = () => {
+  let input;
     return (
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="/PhishApp">PhishApp</Navbar.Brand>
@@ -12,7 +13,16 @@ const TopNavBar = () => {
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
+            {/* <input ref={node => {
+            input = node;
+            }} /> */}
+            <Button href="/PhishApp/search" variant="outline-success" >
+            {/* onPress={() => {
+              this.props.navigation.navigate('', {
+                itemId: 86,
+                otherParam: 'anything you want here',
+            }}>Search */}
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Navbar>

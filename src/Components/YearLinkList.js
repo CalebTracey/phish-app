@@ -6,15 +6,11 @@ const YearLinkList = ({ data }) => {
             return (<YearLink year={year} key={year} />)
         });
     //console.log("*****YEARLINKLIST*****" + yearNode)
-    if (yearNode !== undefined) {
-        return (
+    return (
 
-                    yearNode
-            //<div>{yearNode}</div>
+        yearNode
 
-        );
-    }
-
+    );
 }
 
 export default YearLinkList

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import YearLinkList from '../YearLinkList';
 import axios from '../../axios';
-import { Navbar, Nav } from "react-bootstrap"
 
 class Home extends Component {
   constructor(props) {
@@ -38,17 +37,9 @@ class Home extends Component {
             <h1 >PhishApp</h1>
             <p>Organized Audience Recordings</p>
           </div>
-        </div>
-        <div >
-          <Navbar >
-            <div className="container bg">
-              <Nav >
-                  <div class="btn-group">
-                    {yearLinkListItem}
-                </div>
-              </Nav>
-            </div>
-          </Navbar>
+        </div >
+        <div className="btn-group">
+          {yearLinkListItem}
         </div>
       </div>
     );

@@ -63,7 +63,7 @@ const SetPage = (props) => {
                 indexSec++
             } if (indexSec < 10) {
                 indexSec = "0" + indexSec
-            }return (indexSec + "seconds")
+            }return indexSec = "0" + indexSec;
         }
     }
 

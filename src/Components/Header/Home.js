@@ -17,7 +17,6 @@ class Home extends Component {
     try {
       axios.get("/years")
         .then((res) => {
-          console.log(res.data)
           this.setState({ data: res.data.data, isLoading: false })
         })
     } catch (err) {
@@ -27,14 +26,13 @@ class Home extends Component {
   }
 
   render() {
-    console.log(this.state.data);
     let yearLinkListItem = this.state.isLoading ? "Loading..." : <YearLinkList data={this.state.data} />
     return (
 
-      <div class="container">
+      <div className="container">
 
-        < div class="hero-image">
-          <div class="hero-text">
+        < div className="hero-image">
+          <div className="hero-text">
             <h1 >PhishApp</h1>
             <p>Organized Audience Recordings</p>
           </div>
@@ -43,7 +41,7 @@ class Home extends Component {
           <Navbar >
             <div className="container bg">
               <Nav >
-                  <div class="btn-group">
+                  <div className="btn-group">
                     {yearLinkListItem}
                 </div>
               </Nav>

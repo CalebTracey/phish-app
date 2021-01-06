@@ -1,8 +1,8 @@
 
 
-const About = ({ }) => {
+const About = (props) => {
   return (
-    <div class="about-center">
+    <div clasName="about-center">
       <div className = "about-text">
       <div className="text-box">
         Created for learning and experimentation purposes.
@@ -15,7 +15,7 @@ const About = ({ }) => {
         playable.
       </div >
       <div className="text-box">
-        The required data is gathered using an API provided by <a href="https://www.phish.in" target="_blank">Phish.in</a>.
+        The required data is gathered using an API provided by <a href="https://www.phish.in" target="_top">Phish.in</a>.
         Queries are done in real time and based upon the user's input. The resulting data is then used to provide an interface
         to further refine your search until the desired show has been found. The app was built using 
         the React library and utilizes the Node.js run-time environment. HTTP requests are done through Node.js using the 

@@ -1,13 +1,13 @@
-import React from "react";
 import { Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const ShowLink = ({ show }) => {
   return (
-    <button type="button" class="btn btn-primary shows">
-      <Nav.Link href={"/PhishApp/shows/" + show.date}>
+    <Nav  className="mr-auto">
+      <Link to={"/shows/" + show.date} className="nav-link">
         {show.date} {show.venue.name}
-      </Nav.Link>
-    </button>
+      </Link>
+    </Nav>
   );
 };
 

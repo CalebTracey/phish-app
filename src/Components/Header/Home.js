@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import YearLinkList from '../YearLinkList';
 import axios from '../../axios';
-import {Navbar, Nav} from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 
 class Home extends Component {
   constructor(props) {
@@ -38,15 +38,13 @@ class Home extends Component {
           </div>
         </div>
         <div >
-          <Navbar >
-            <div className="container bg">
-              <Nav >
-                  <div className="btn-group">
-                    {yearLinkListItem}
+            <Nav >
+              <div className="container bg">
+                <div className="btn-group">
+                  {yearLinkListItem}
                 </div>
-              </Nav>
-            </div>
-          </Navbar>
+              </div>
+            </Nav>
         </div>
       </div>
     );

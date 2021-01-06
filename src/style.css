@@ -223,6 +223,7 @@
 }
 
 .btn.btn-primary {
+    text-align: center;
     border: 0;
     padding: 10px;
     margin: 0;
@@ -231,11 +232,27 @@
 .btn.btn-primary.shows {
     text-align: left;
     border: 0;
-    padding: 0;
+    padding: 10px;
     margin: 0;
 }   
 
+.btn-group-vertical {
+    color: #ffffff;
+    background: #3399ff;
+    /* margin-top: 20px; */
+    display: flex;
+    width: inherit;
+    /* flex-grow: inherit; */
+    /* max-height: 600px; */
+    margin: 20px;
+    box-shadow: 1px 1px 2px #000000;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    border-radius: 10px;
+}
 .btn-group {
+    color: #ffffff;
+    background: #3399ff;
     margin-top: 20px;
     display: flex;
     width:inherit;
@@ -248,13 +265,14 @@
 .container.bvg{
     max-height: 600px;
     overflow-x: scroll;
-    border-radius: 10px;  }  
+    overflow-y: scroll; 
+    border-radius: 10px;
+ }  
 
 .container.bg{
-    margin-top: 20px;
-    padding: 10px;
-    /* scroll-behavior:smooth;   */
+
     border-radius: 10px;  
+    
 }  
 
 .text-box {

@@ -31,16 +31,16 @@ class YearShow extends Component {
         //console.log("**********" + JSON.stringify(this.props))
         let showLinkListItem = this.state.isLoading ? "Loading..." : <ShowLinkList shows={this.state.data} />
         return (
-            <Navbar bg="light" expand="sm">
-                <Nav >
-                    <div className="container bvg">
-                        
+                <Navbar bg="light" expand="sm">
+                    <Nav >
+                        <div className="container bvg">
                             <div className="btn-group-vertical">
                                 {showLinkListItem}
                             </div>
-                    </div>
-                </Nav>
-            </Navbar >
+                        </div>
+                    </Nav>
+                </Navbar >
+
         );
     }
 }

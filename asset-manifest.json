@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/PhishApp/static/css/main.c3bda0cd.chunk.css",
-    "main.js": "/PhishApp/static/js/main.e152d87b.chunk.js",
-    "main.js.map": "/PhishApp/static/js/main.e152d87b.chunk.js.map",
+    "main.js": "/PhishApp/static/js/main.0d774888.chunk.js",
+    "main.js.map": "/PhishApp/static/js/main.0d774888.chunk.js.map",
     "runtime-main.js": "/PhishApp/static/js/runtime-main.54a6234b.js",
     "runtime-main.js.map": "/PhishApp/static/js/runtime-main.54a6234b.js.map",
-    "static/js/2.bc881b33.chunk.js": "/PhishApp/static/js/2.bc881b33.chunk.js",
-    "static/js/2.bc881b33.chunk.js.map": "/PhishApp/static/js/2.bc881b33.chunk.js.map",
+    "static/js/2.6203916e.chunk.js": "/PhishApp/static/js/2.6203916e.chunk.js",
+    "static/js/2.6203916e.chunk.js.map": "/PhishApp/static/js/2.6203916e.chunk.js.map",
     "static/js/3.db585c60.chunk.js": "/PhishApp/static/js/3.db585c60.chunk.js",
     "static/js/3.db585c60.chunk.js.map": "/PhishApp/static/js/3.db585c60.chunk.js.map",
     "index.html": "/PhishApp/index.html",
     "static/css/main.c3bda0cd.chunk.css.map": "/PhishApp/static/css/main.c3bda0cd.chunk.css.map",
-    "static/js/2.bc881b33.chunk.js.LICENSE.txt": "/PhishApp/static/js/2.bc881b33.chunk.js.LICENSE.txt",
+    "static/js/2.6203916e.chunk.js.LICENSE.txt": "/PhishApp/static/js/2.6203916e.chunk.js.LICENSE.txt",
     "static/media/style.css": "/PhishApp/static/media/PhishApp.12dc6498.png"
   },
   "entrypoints": [
     "static/js/runtime-main.54a6234b.js",
-    "static/js/2.bc881b33.chunk.js",
+    "static/js/2.6203916e.chunk.js",
     "static/css/main.c3bda0cd.chunk.css",
-    "static/js/main.e152d87b.chunk.js"
+    "static/js/main.0d774888.chunk.js"
   ]
 }

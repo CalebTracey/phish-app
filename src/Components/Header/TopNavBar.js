@@ -1,15 +1,16 @@
 import {Navbar,Nav,Form,FormControl,Button} from "react-bootstrap"
+import {Link} from "react-router-dom";
 
 const TopNavBar = () => {
   let input;
     return (
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/PhishApp">PhishApp</Navbar.Brand>
+        <Navbar.Brand href="/">PhishApp</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/PhishApp">Home</Nav.Link>
-            <Nav.Link href="/PhishApp/about">About</Nav.Link>
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/about" className="nav-link">About</Link>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />

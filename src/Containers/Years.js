@@ -18,7 +18,6 @@ class Years extends Component {
         try {
             axios.get("/years")
                 .then((res) => {
-                    console.log(res.data)
                     this.setState({ data: res.data.data, isLoading: false })
                 })
         } catch (err) {
@@ -28,13 +27,12 @@ class Years extends Component {
     }
 
     render() {
-        console.log(this.state.data);
         let yearLinkListItem = this.state.isLoading ? "Loading..." : <YearLinkList data={this.state.data} />
         return (
             <Navbar bg="light" expand="sm">
                 <Nav >
-                    <div class="container bvg">
-                        <div class="btn-group-vertical">
+                    <div className="container bvg">
+                        <div className="btn-group-vertical">
                         {yearLinkListItem}
                         </div>
                     </div>

@@ -1,11 +1,12 @@
 import React from "react";
+import { Nav } from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 const YearLink = (year) => {
-    return (
-    <button type="button" class="btn btn-primary" >
-    <a style={{color: "white"}} href={`/PhishApp/years/${year.year}`}>{year.year}
-    </a>
-    </button >
+  return (
+    <Nav  className="mr-auto">
+      <Link to={`/years/${year.year}`} className="nav-link"> {year.year} </Link>
+    </Nav>
   );
 };
 

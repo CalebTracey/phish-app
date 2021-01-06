@@ -1,16 +1,17 @@
 import { Nav, Navbar } from "react-bootstrap";
+import {Link} from "react-router-dom"
 
 const Sidebar = () => {
   return (
     <Navbar bg="light" className="sidebar">
       <Nav className="mr-auto">
-        <Nav.Link href="/PhishApp/years">Years</Nav.Link>
+        <Link to="/years" className="nav-link">Years</Link>
       </Nav>
       <Nav className="mr-auto">
-        <Nav.Link href="/PhishApp/tours">Tours</Nav.Link>
+        <Link to="/tours" className="nav-link">Tours</Link>
       </Nav>
       <Nav className="mr-auto">
-        <Nav.Link href="/PhishApp/songs">Songs</Nav.Link>
+        <Link to="/songs" className="nav-link">Songs</Link>
       </Nav>
     </Navbar>
   );

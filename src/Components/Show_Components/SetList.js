@@ -17,7 +17,7 @@ const SetList = (props) => {
 
   const setNodes = setKeys.map((setKey) => {
     return (
-      <div className="set-page">
+      <div className="set-page" key={setKey}>
         <SetPage tracks={tracks} setKey={setKey} />
       </div>
     );

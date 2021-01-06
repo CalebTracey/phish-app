@@ -2,7 +2,7 @@
 
 const About = (props) => {
   return (
-    <div clasName="about-center">
+    <div className="about-center">
       <div className = "about-text">
       <div className="text-box">
         Created for learning and experimentation purposes.

@@ -2,10 +2,9 @@ import {Navbar,Nav,Form,FormControl,Button} from "react-bootstrap"
 import {Link} from "react-router-dom";
 
 const TopNavBar = () => {
-  let input;
     return (
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">PhishApp</Navbar.Brand>
+        <Navbar.Brand><Link to="/">PhishApp</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -13,7 +12,7 @@ const TopNavBar = () => {
             <Link to="/about" className="nav-link">About</Link>
           </Nav>
           <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <FormControl type="text" placeholder="" className="mr-sm-2" />
             {/* <input ref={node => {
             input = node;
             }} /> */}
@@ -22,7 +21,7 @@ const TopNavBar = () => {
               this.props.navigation.navigate('', {
                 itemId: 86,
                 otherParam: 'anything you want here',
-            }}>Search */}
+            }}>*/}Search 
             </Button>
           </Form>
         </Navbar.Collapse>

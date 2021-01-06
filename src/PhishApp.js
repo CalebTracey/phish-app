@@ -6,7 +6,6 @@ import ShowDetails from "./Containers/ShowDetails";
 import Years from "./Containers/Years";
 import Tours from "./Containers/Tours";
 import Songs from "./Containers/Songs";
-import Search from "./Containers/Search";
 import YearShow from "./Containers/YearShow";
 import TopNavBar from "./Components/Header/TopNavBar";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";

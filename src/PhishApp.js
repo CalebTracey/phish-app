@@ -6,16 +6,19 @@ import ShowDetails from "./Containers/ShowDetails";
 import Years from "./Containers/Years";
 import Tours from "./Containers/Tours";
 import Songs from "./Containers/Songs";
+import Search from "./Components/Header/Search";
 import YearShow from "./Containers/YearShow";
 import TopNavBar from "./Components/Header/TopNavBar";
+import RouteNotFound from "./Components/Header/RouteNotFound";
+
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Sidebar from "./Components/Sidebar";
 
 const PhishApp = () => {
   return (
-    
-      <div className="wrapper">
-        <Router>
+
+    <div className="wrapper">
+      <Router>
         <audio className="audio-element">
           <source id="audio-element-source"></source>
         </audio>
@@ -24,20 +27,22 @@ const PhishApp = () => {
           <Sidebar />
           <div className="content-pane">
 
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/tours" component={Tours} />
-                <Route path="/songs" component={Songs} />
-                <Route exact path="/years" component={Years} />              
-                <Route path="/years/:year" component={YearShow} />
-                <Route path="/shows/:date" component={ShowDetails} />
-              </Switch>
+            <Switch>
+              <Route exact path="/PhishApp" component={Home} />
+              <Route exact path="/PhishApp/about" component={About} />
+              <Route exact path="/PhishApp/results" component={Search} />
+              <Route path="/PhishApp/tours" component={Tours} />
+              <Route path="/PhishApp/songs" component={Songs} />
+              <Route exact path="/PhishApp/years" component={Years} />
+              <Route path="/PhishApp/years/:year" component={YearShow} />
+              <Route path="/PhishApp/shows/:date" component={ShowDetails} />
+              <Route component={RouteNotFound} />
+            </Switch>
           </div>
-          </div>
+        </div>
         <div className="footer">&copy; 2021 Caleb Tracey</div>
-        </Router>
-      </div>
+      </Router>
+    </div>
 
   );
 };

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from '../axios';
 import Show from '../Components/Show'
+import Spinner from 'react-bootstrap/Spinner'
+
 
 
 class ShowDetails extends Component {
@@ -27,7 +29,7 @@ class ShowDetails extends Component {
 
     render() {
         return (
-            this.state.isLoading ? "Loading..." : <Show show={this.state.show}/>
+            this.state.isLoading ? <Spinner animation="border" /> : <Show show={this.state.show}/>
         )
     }
 }

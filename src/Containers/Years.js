@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import YearLinkList from '../Components/YearLinkList';
 import axios from '../axios';
 import { Navbar, Nav } from "react-bootstrap"
+import Spinner from 'react-bootstrap/Spinner'
 
 
 class Years extends Component {
@@ -27,7 +28,7 @@ class Years extends Component {
     }
 
     render() {
-        let yearLinkListItem = this.state.isLoading ? "Loading..." : <YearLinkList data={this.state.data} />
+        let yearLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <YearLinkList data={this.state.data} />
         return (
             <Navbar bg="light" expand="sm">
                 <Nav >

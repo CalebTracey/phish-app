@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 This project was created to learn and gain experience in web app development with React.
 
 This app provides a simple, user-friendly interface to navigate the vast public archive of audience recordings for the band Phish. You can search for a specific 
@@ -9,6 +7,8 @@ The required data is gathered using an API provided by [Phish.in](http://http://
 resulting data is then used to provide an interface to further refine your search until the desired show has been found. The app was built using the React library
 and utilizes the Node.js run-time environment. HTTP requests are done through Node.js using the Axios library. Styling comprises of CSS elements from the Bootstrap
 front-end framework.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

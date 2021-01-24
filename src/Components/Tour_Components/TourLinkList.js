@@ -5,12 +5,7 @@ const YearLinkList = ({ data }) => {
         data.map((tour) => {
             return (<TourLink tour={tour} key={tour.id} />)
         });
-    //console.log("*****YEARLINKLIST*****" + yearNode)
-    return (
-
-        tourNode
-
-    );
+    return (tourNode);
 }
 
 export default YearLinkList

@@ -1,10 +1,6 @@
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
 import React, { Component } from 'react';
-import Search from "./Search";
-import About from "./About";
-import Home from "./Home";
-import RouteNotFound from "./RouteNotFound";
-import { Route, Switch, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 
 class TopNavBar extends Component {

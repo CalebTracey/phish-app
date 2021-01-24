@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from '../axios';
-import ShowLinkList from '../Components/Show_Components/ShowLinkList';
+import SongShowLinkList from '../Components/Song_Components/SongShowLinkList';
 import { Navbar, Nav } from "react-bootstrap"
 import Spinner from 'react-bootstrap/Spinner'
 
-class TourShow extends Component {
+class SongShow extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,10 +16,10 @@ class TourShow extends Component {
 
     componentDidMount() {
         try {
-            axios.get("tours/" + this.props.match.params.id)
+            axios.get("songs/" + this.props.match.params.id)
                 .then((res) => {
                     console.log(res.data)
-                    this.setState({ data: res.data.data.shows, isLoading: false })
+                    this.setState({ data: res.data.data, isLoading: false })
                 })
         } catch (err) {
             // Handle Error Here
@@ -28,7 +28,7 @@ class TourShow extends Component {
     }
 
     render() {
-        let showLinkListItem = this.state.isLoading ? <Spinner animation="border" />  : <ShowLinkList shows={this.state.data} />
+        let showLinkListItem = this.state.isLoading ? <Spinner animation="border" />  : <SongShowLinkList shows={this.state.data} />
         return (
                 <Navbar bg="light" expand="sm"> 
                     <Nav >
@@ -44,4 +44,4 @@ class TourShow extends Component {
     }
 }
 
-export default TourShow
+export default SongShow

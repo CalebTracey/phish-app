@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from '../axios';
-import ShowLinkList from '../Components/ShowLinkList';
+import ShowLinkList from '../Components/Show_Components/ShowLinkList';
 import { Navbar, Nav } from "react-bootstrap"
 import Spinner from 'react-bootstrap/Spinner'
 
@@ -28,7 +28,7 @@ class YearShow extends Component {
     }
 
     render() {
-        let showLinkListItem = this.state.isLoading ? <Spinner animation="border" />  : <ShowLinkList shows={this.state.data} />
+        let showLinkListItem = this.state.isLoading ? <Spinner animation="border" />  : <ShowLinkList shows={this.state.data.data} />
         return (
                 <Navbar bg="light" expand="sm">
                     <Nav >

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from '../axios';
-import Show from '../Components/Show'
+import Show from '../Components/Show_Components/Show'
 import Spinner from 'react-bootstrap/Spinner'
-
-
 
 class ShowDetails extends Component {
     constructor(props) {

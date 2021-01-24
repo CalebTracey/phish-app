@@ -1,4 +1,4 @@
-import "../style.css";
+import '../../style.css';
 import ShowLink from "./ShowLink";
 
 const ShowLinkList = ({ shows }) => {

@@ -1,7 +1,7 @@
-import '../style.css';
+import '../../style.css';
 import React from 'react';
-import MetaData from './Show_Components/MetaData'
-import SetList from './Show_Components/SetList'
+import MetaData from './MetaData'
+import SetList from './SetList'
 
 const Show = (props) => {
     let { show } = props

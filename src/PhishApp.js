@@ -9,6 +9,7 @@ import Songs from "./Containers/Songs";
 import Search from "./Components/Header/Search";
 import YearShow from "./Containers/YearShow";
 import TourShow from "./Containers/TourShow";
+import SongShow from "./Containers/SongShow";
 import TopNavBar from "./Components/Header/TopNavBar";
 import RouteNotFound from "./Components/Header/RouteNotFound";
 
@@ -33,11 +34,12 @@ const PhishApp = () => {
               <Route exact path="/PhishApp/about" component={About} />
               <Route exact path="/PhishApp/results" component={Search} />
               <Route exact path="/PhishApp/tours" component={Tours} />
-              <Route path="/PhishApp/songs" component={Songs} />
+              <Route exact path="/PhishApp/songs" component={Songs} />
               <Route exact path="/PhishApp/years" component={Years} />
               <Route path="/PhishApp/years/:year" component={YearShow} />
               <Route path="/PhishApp/shows/:date" component={ShowDetails} />
               <Route path="/PhishApp/tours/:id" component={TourShow} />
+              <Route path="/PhishApp/songs/:id" component={SongShow} />
               <Route component={RouteNotFound} />
             </Switch>
           </div>

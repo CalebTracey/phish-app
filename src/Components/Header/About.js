@@ -1,5 +1,3 @@
-
-
 const About = (props) => {
   return (
     <div className="about-center">

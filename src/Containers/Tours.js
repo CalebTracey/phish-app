@@ -1,17 +1,5 @@
-// import React from 'react';
-
-// const Tours = () => {
-//     return (
-//         <div className="tours-center">
-//             <h1 className="tours-text">
-//                 Coming soon...
-//             </h1>
-//         </div>
-//     );
-// };
-
-// export default Tours;
-import TourLinkList from '../Components/TourLinkList';
+import TourLinkList from '../Components/Tour_Components/TourLinkList';
+import TourCompare from '../Components/Tour_Components/TourCompare'
 import axios from '../axios';
 import { Navbar, Nav } from "react-bootstrap"
 import Spinner from 'react-bootstrap/Spinner'
@@ -39,14 +27,36 @@ class Tours extends Component {
         }
     }
 
+    async componentDidMount() {
+        let page = 0
+        let totalPages = 0
+        do {
+            try {
+                await axios.get("/tours", { params: { page: ++page } })
+                    .then((res) => {
+                        console.log(res.data)
+                        totalPages = res.data.total_pages
+                        this.state.data = this.state.data.concat(res.data.data)
+                        if (page != 1 && page === totalPages) {
+                            this.setState({ isLoading: false })
+                        }
+                    })
+            } catch (err) {
+                // Handle Error Here
+                console.error(err);
+            }
+        } while (page < totalPages)
+        this.sortTours()
+    }
+
+    sortTours() {
+        this.setState({ data: TourCompare(this.state.data) })
+    }
+
     render() {
         let tourLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <TourLinkList data={this.state.data} />
         return (
-
-            <Navbar bg="light" expand="sm" className = "padding-zero">
-                <div className="tour-header">
-                    Tour data is incomplete
-                </div>
+            <Navbar bg="light" expand="sm" className="padding-zero">
                 <Nav >
                     <div className="container bvg">
                         <div className="btn-group-vertical">

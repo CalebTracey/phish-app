@@ -12,13 +12,11 @@ import TourShow from "./Containers/TourShow";
 import SongShow from "./Containers/SongShow";
 import TopNavBar from "./Components/Header/TopNavBar";
 import RouteNotFound from "./Components/Header/RouteNotFound";
-
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Sidebar from "./Components/Sidebar";
 
 const PhishApp = () => {
   return (
-
     <div className="wrapper">
       <Router>
         <audio className="audio-element">
@@ -32,7 +30,7 @@ const PhishApp = () => {
               <Route exact path="/" component={Home} />
               <Route exact path="/PhishApp" component={Home} />
               <Route exact path="/PhishApp/about" component={About} />
-              <Route exact path="/PhishApp/results" component={Search} />
+              <Route exact path="/PhishApp/search?term=:searchText" component={Search} />
               <Route exact path="/PhishApp/tours" component={Tours} />
               <Route exact path="/PhishApp/songs" component={Songs} />
               <Route exact path="/PhishApp/years" component={Years} />

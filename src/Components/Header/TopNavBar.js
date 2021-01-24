@@ -23,13 +23,15 @@ class TopNavBar extends Component {
   };
 
   handleSearchSubmit = () => {
-    if (this.state.searchText) {
+    if (this.state.searchText && this.state.searchText.length >= 3) {
       this.props.history.push({
-        pathname: "/PhishApp/results",
+        pathname: "/PhishApp/search?term=" + this.state.searchText,
         state: {
           searchText: this.state.searchText
         }
       });
+    } else if (this.state.searchText && this.state.searchText.length < 3) {
+      alert("Search term must be longer than 3 characters");
     } else {
       alert("Please enter some search text!");
     }

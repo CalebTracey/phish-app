@@ -6,7 +6,7 @@ axios.defaults.headers.common = {
 // 'Connection': 'keep-alive',
 // 'Host': 'phish.in',
 
-// 'Access-Control-Allow-Origin': '*',
+//'Access-Control-Allow-Origin': 'true',
 // 'Access-Control-Allow-Credentials': 'true',
 //'Access-Control-Request-Methods': 'GET',
 //'Access-Control-Request-Headers': 'authorization, Accept',

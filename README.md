@@ -1,8 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Created for learning and experimentation purposes.
+This project was created to learn and gain experience in web app development with React.
 
-PhishApp provides a simple, user-friendly interface to navigate the vast public archive of audience recordings for the band Phish. You can search for a specific 
+This app provides a simple, user-friendly interface to navigate the vast public archive of audience recordings for the band Phish. You can search for a specific 
 show by year, tour, or song. You may also provide a keyword into the search bar above. Each track of every show is also linked to an audio file and fully playable.
 
 The required data is gathered using an API provided by [Phish.in](http://http://phish.in/). Queries are done in real time and based upon the user's input. The

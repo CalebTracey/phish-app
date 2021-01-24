@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/PhishApp/static/css/main.1981b4ba.chunk.css",
-    "main.js": "/PhishApp/static/js/main.ca62ee43.chunk.js",
-    "main.js.map": "/PhishApp/static/js/main.ca62ee43.chunk.js.map",
-    "runtime-main.js": "/PhishApp/static/js/runtime-main.5d6ad9e5.js",
-    "runtime-main.js.map": "/PhishApp/static/js/runtime-main.5d6ad9e5.js.map",
-    "static/js/2.a20c76eb.chunk.js": "/PhishApp/static/js/2.a20c76eb.chunk.js",
-    "static/js/2.a20c76eb.chunk.js.map": "/PhishApp/static/js/2.a20c76eb.chunk.js.map",
-    "static/js/3.c70a2f29.chunk.js": "/PhishApp/static/js/3.c70a2f29.chunk.js",
-    "static/js/3.c70a2f29.chunk.js.map": "/PhishApp/static/js/3.c70a2f29.chunk.js.map",
+    "main.js": "/PhishApp/static/js/main.106faf17.chunk.js",
+    "main.js.map": "/PhishApp/static/js/main.106faf17.chunk.js.map",
+    "runtime-main.js": "/PhishApp/static/js/runtime-main.79c23477.js",
+    "runtime-main.js.map": "/PhishApp/static/js/runtime-main.79c23477.js.map",
+    "static/js/2.30358b32.chunk.js": "/PhishApp/static/js/2.30358b32.chunk.js",
+    "static/js/2.30358b32.chunk.js.map": "/PhishApp/static/js/2.30358b32.chunk.js.map",
+    "static/js/3.de7927ef.chunk.js": "/PhishApp/static/js/3.de7927ef.chunk.js",
+    "static/js/3.de7927ef.chunk.js.map": "/PhishApp/static/js/3.de7927ef.chunk.js.map",
     "index.html": "/PhishApp/index.html",
     "static/css/main.1981b4ba.chunk.css.map": "/PhishApp/static/css/main.1981b4ba.chunk.css.map",
-    "static/js/2.a20c76eb.chunk.js.LICENSE.txt": "/PhishApp/static/js/2.a20c76eb.chunk.js.LICENSE.txt",
+    "static/js/2.30358b32.chunk.js.LICENSE.txt": "/PhishApp/static/js/2.30358b32.chunk.js.LICENSE.txt",
     "static/media/style.css": "/PhishApp/static/media/PhishApp.12dc6498.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.5d6ad9e5.js",
-    "static/js/2.a20c76eb.chunk.js",
+    "static/js/runtime-main.79c23477.js",
+    "static/js/2.30358b32.chunk.js",
     "static/css/main.1981b4ba.chunk.css",
-    "static/js/main.ca62ee43.chunk.js"
+    "static/js/main.106faf17.chunk.js"
   ]
 }

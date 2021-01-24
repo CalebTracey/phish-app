@@ -30,7 +30,7 @@ class Years extends Component {
     render() {
         let yearLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <YearLinkList data={this.state.data} />
         return (
-            <Navbar bg="light" expand="sm">
+            <Navbar bg="light" expand="sm" className = "padding-zero">
                 <Nav >
                     <div className="container bvg">
                         <div className="btn-group-vertical">

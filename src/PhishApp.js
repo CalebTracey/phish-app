@@ -8,6 +8,7 @@ import Tours from "./Containers/Tours";
 import Songs from "./Containers/Songs";
 import Search from "./Components/Header/Search";
 import YearShow from "./Containers/YearShow";
+import TourShow from "./Containers/TourShow";
 import TopNavBar from "./Components/Header/TopNavBar";
 import RouteNotFound from "./Components/Header/RouteNotFound";
 
@@ -26,16 +27,17 @@ const PhishApp = () => {
         <div className="side-and-content">
           <Sidebar />
           <div className="content-pane">
-
             <Switch>
+              <Route exact path="/" component={Home} />
               <Route exact path="/PhishApp" component={Home} />
               <Route exact path="/PhishApp/about" component={About} />
               <Route exact path="/PhishApp/results" component={Search} />
-              <Route path="/PhishApp/tours" component={Tours} />
+              <Route exact path="/PhishApp/tours" component={Tours} />
               <Route path="/PhishApp/songs" component={Songs} />
               <Route exact path="/PhishApp/years" component={Years} />
               <Route path="/PhishApp/years/:year" component={YearShow} />
               <Route path="/PhishApp/shows/:date" component={ShowDetails} />
+              <Route path="/PhishApp/tours/:id" component={TourShow} />
               <Route component={RouteNotFound} />
             </Switch>
           </div>

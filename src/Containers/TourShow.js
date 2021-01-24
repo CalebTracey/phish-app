@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from '../axios';
-import ShowLinkList from '../Components/ShowLinkList';
+import TourShowLinkList from '../Components/TourShowLinkList';
 import { Navbar, Nav } from "react-bootstrap"
 import Spinner from 'react-bootstrap/Spinner'
 
-class YearShow extends Component {
+class TourShow extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,10 +16,10 @@ class YearShow extends Component {
 
     componentDidMount() {
         try {
-            axios.get("years/" + this.props.match.params.year)
+            axios.get("tours/" + this.props.match.params.id)
                 .then((res) => {
                     console.log(res.data)
-                    this.setState({ data: res.data.data, isLoading: false })
+                    this.setState({ data: res.data.data.shows, isLoading: false })
                 })
         } catch (err) {
             // Handle Error Here
@@ -28,9 +28,9 @@ class YearShow extends Component {
     }
 
     render() {
-        let showLinkListItem = this.state.isLoading ? <Spinner animation="border" />  : <ShowLinkList shows={this.state.data} />
+        let showLinkListItem = this.state.isLoading ? <Spinner animation="border" />  : <TourShowLinkList shows={this.state.data} />
         return (
-                <Navbar bg="light" expand="sm">
+                <Navbar bg="light" expand="sm"> 
                     <Nav >
                         <div className="container bvg">
                             <div className="btn-group-vertical">
@@ -44,4 +44,4 @@ class YearShow extends Component {
     }
 }
 
-export default YearShow
+export default TourShow

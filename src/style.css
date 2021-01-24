@@ -23,8 +23,6 @@
     justify-content: center;
 }
 
-
-
 .side-and-content{
     flex: 1 0 auto;
     display: flex;
@@ -270,9 +268,7 @@
  }  
 
 .container.bg{
-
     border-radius: 10px;  
-    
 }  
 
 .text-box {
@@ -349,4 +345,22 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+}
+
+.tour-header {
+    width: 100%;
+    padding-top: 20px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    font-style: italic;
+}
+
+.tour-link-contents {
+    display: flex;
+    justify-content: center;
+}
+
+.padding-zero {
+    padding: 0;
 }

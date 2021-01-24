@@ -5,7 +5,6 @@ const YearLinkList = ({ data }) => {
         data.map((year) => {
             return (<YearLink year={year} key={year} />)
         });
-    //console.log("*****YEARLINKLIST*****" + yearNode)
     return (
 
         yearNode

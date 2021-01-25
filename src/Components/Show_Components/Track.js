@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import AudioPlayer from './AudioPlayer';
 
 class Track extends Component {
     constructor(props) {
         super(props);
-        this.playAudio = this.playAudio.bind(this);
+        // this.playAudio = this.playAudio.bind(this);
     }
 
     convertLength() {
@@ -76,16 +77,20 @@ class Track extends Component {
             return ":"+indexSec;
         }
     }
-  // hacky node manipulation. AudioPlayer should be a component.
-  playAudio() {
-    const audioEl = document.getElementsByClassName("audio-element")[0];
-    if (audioEl !== undefined) {
-      const source = document.getElementById("audio-element-source");
-      source.src = this.props.track.mp3;
-      audioEl.load();
-      audioEl.play();
-    }
-  }
+  //hacky node manipulation. AudioPlayer should be a component.
+//   playAudio() {
+//      //const audioEl = document.getElementsByClassName("audio-element")[0];
+//     // if (audioEl !== undefined) {
+//     //   const source = document.getElementById("audio-element-source");
+//     //   source.src = this.props.track.mp3;
+//     //   audioEl.load();
+//     //   audioEl.play();
+//     // }
+//     let { track } = this.props;
+//     return <AudioPlayer url = {track.mp3}></AudioPlayer>
+//   }
+
+
 
   render() {
     let { track } = this.props;
@@ -95,9 +100,11 @@ class Track extends Component {
           <div className="track-info-pos">{track.position}</div>
           <div className="track-info-title">{track.title}</div>
           <div className="track-info-length glyphicon glyphicon-play-circle">
-            <button className="btn">
+            {/* <button className="btn"> 
               <i className="fa fa-play" onClick={this.playAudio}></i>
-            </button>
+            </button> */}
+            {/* {this.playAudio} */}
+            <AudioPlayer url = {track.mp3}></AudioPlayer>
           </div>
           <div className="track-info-length">
             {this.convertLength(track.duration)}

@@ -28,7 +28,7 @@ class YearShow extends Component {
     }
 
     render() {
-        let showLinkListItem = this.state.isLoading ? <Spinner animation="border" />  : <ShowLinkList shows={this.state.data.data} />
+        let showLinkListItem = this.state.isLoading ? <Spinner animation="border" />  : <ShowLinkList shows={this.state.data} />
         return (
                 <Navbar bg="light" expand="sm">
                     <Nav >

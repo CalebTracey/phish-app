@@ -31,7 +31,7 @@ const TrackAudio = ({ track, duration, url }) => {
 
     return (
         <div>
-            <button type="button" class={classStatus} onClick={toggle}>{
+            <button type="button" className={classStatus} onClick={toggle}>{
                 <div className="track-info-name-length">
                     <div className="track-info-pos">{track.position}</div>
                     <div className="track-info-title">{track.title}</div>

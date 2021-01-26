@@ -1,14 +1,14 @@
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
-
+import Player from './Player'
+import './../../style.css';
 
 class TopNavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       searchText: ""
-
     }
   }
 
@@ -48,6 +48,7 @@ class TopNavBar extends Component {
             <Nav.Link onClick={this.handleRoute("/PhishApp")}>Home</Nav.Link>
             <Nav.Link onClick={this.handleRoute("/PhishApp/about")}>About</Nav.Link>
           </Nav>
+          {/* <Player></Player> */}
           <Form inline>
             <FormControl onChange={this.handleSearchInput}
               value={this.state.searchText}
@@ -61,12 +62,9 @@ class TopNavBar extends Component {
           </Form>
         </Navbar.Collapse>
       </Navbar>
-      
     </>
     );
   }
-
 }
-
 
 export default withRouter(TopNavBar);

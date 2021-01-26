@@ -30,7 +30,6 @@ class Home extends Component {
     return (
 
       <div className="container">
-
         < div className="hero-image">
           <div className="hero-text">
             <h1 >PhishApp</h1>

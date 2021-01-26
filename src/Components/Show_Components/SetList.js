@@ -6,14 +6,11 @@ const SetList = (props) => {
     show: { tracks },
   } = props;
 
-  //console.log("*********TRACKS" + JSON.stringify(tracks))
   let sets = tracks.map((track) => {
     return track.set;
   });
 
   let setKeys = [...new Set(sets)];
-
-  //console.log("*********SETS" + JSON.stringify(one))
 
   const setNodes = setKeys.map((setKey) => {
     return (

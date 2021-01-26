@@ -1,10 +1,13 @@
 import React, { Component } from "react";
-import AudioPlayer from './AudioPlayer';
+import TrackAudio from './TrackAudio';
 
 class Track extends Component {
     constructor(props) {
         super(props);
         // this.playAudio = this.playAudio.bind(this);
+        this.state = {
+            selectedTrack: null
+        }
     }
 
     convertLength() {
@@ -77,41 +80,32 @@ class Track extends Component {
             return ":"+indexSec;
         }
     }
-  //hacky node manipulation. AudioPlayer should be a component.
-//   playAudio() {
-//      //const audioEl = document.getElementsByClassName("audio-element")[0];
-//     // if (audioEl !== undefined) {
-//     //   const source = document.getElementById("audio-element-source");
-//     //   source.src = this.props.track.mp3;
-//     //   audioEl.load();
-//     //   audioEl.play();
-//     // }
-//     let { track } = this.props;
-//     return <AudioPlayer url = {track.mp3}></AudioPlayer>
-//   }
-
-
 
   render() {
     let { track } = this.props;
+
     return (
-      <div className="list-group-item">
-        <div className="track-info-name-length">
-          <div className="track-info-pos">{track.position}</div>
-          <div className="track-info-title">{track.title}</div>
-          <div className="track-info-length glyphicon glyphicon-play-circle">
-            {/* <button className="btn"> 
-              <i className="fa fa-play" onClick={this.playAudio}></i>
-            </button> */}
-            {/* {this.playAudio} */}
-            <AudioPlayer url = {track.mp3}></AudioPlayer>
-          </div>
-          <div className="track-info-length">
-            {this.convertLength(track.duration)}
-          </div>
-        </div>
-      </div>
-    );
+        <TrackAudio track = {track} duration = {this.convertLength(track.duration)} url = {track.mp3}> </TrackAudio>
+    )
+    // return (
+    //   <div className="list-group-item">
+    //     <div className="track-info-name-length">
+    //       <div className="track-info-pos">{track.position}</div>
+    //       <div className="track-info-title">{track.title}</div>
+    //       <div className="track-info-length glyphicon glyphicon-play-circle">
+    //         {/* <button className="btn"> 
+    //           <i className="fa fa-play" onClick={this.playAudio}></i>
+    //         </button> */}
+    //         {/* {this.playAudio} */}
+    //         <AudioPlayer url = {track.mp3}>
+    //         </AudioPlayer>
+    //       </div>
+    //       <div className="track-info-length">
+    //         {this.convertLength(track.duration)}
+    //       </div>
+    //     </div>
+    //   </div>
+    // );
   }
 
 }

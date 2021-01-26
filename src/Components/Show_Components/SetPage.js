@@ -70,7 +70,10 @@ const SetPage = (props) => {
         return (
             <div>
                 <SetHeader duration={convertLength(setLength)} setKey={setKey} />
+                <div class="list-group">
                 <TrackList tracks={setTracks} setKey={setKey} />
+                </div>
+                
             </div>
         );
     }

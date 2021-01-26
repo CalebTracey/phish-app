@@ -19,7 +19,7 @@ class TourShow extends Component {
             axios.get("tours/" + this.props.match.params.id)
                 .then((res) => {
                     console.log(res.data)
-                    this.setState({ data: res.data.data.shows, isLoading: false })
+                    this.setState({ data: res.data.show_ids, isLoading: false })
                 })
         } catch (err) {
             // Handle Error Here

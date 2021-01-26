@@ -1,16 +1,16 @@
-import TourLinkList from '../Components/Tour_Components/TourLinkList';
-import TourCompare from '../Components/Tour_Components/TourCompare'
+import React, { Component } from 'react';
+import VenueLinkList from '../Components/Venue_Components/VenueLinkList';
+import VenueCompare from '../Components/Venue_Components/VenueCompare'
 import axios from '../axios';
 import { Navbar, Nav } from "react-bootstrap"
 import Spinner from 'react-bootstrap/Spinner'
-import React, { Component } from 'react';
 
-class Tours extends Component {
+class Venues extends Component {
     constructor(props) {
         super(props);
         this.state = {
             data: [],
-            tourLinkListItem: null,
+            yearLinkListItem: null,
             isLoading: true,
         }
     }
@@ -20,7 +20,7 @@ class Tours extends Component {
         let totalPages = 0
         do {
             try {
-                await axios.get("/tours", { params: { page: ++page } })
+                await axios.get("/venues", { params: { page: ++page } })
                     .then((res) => {
                         console.log(res.data)
                         totalPages = res.data.total_pages
@@ -38,17 +38,17 @@ class Tours extends Component {
     }
 
     sortTours() {
-        this.setState({ data: TourCompare(this.state.data) })
+        this.setState({ data: VenueCompare(this.state.data) })
     }
 
     render() {
-        let tourLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <TourLinkList data={this.state.data} />
+        let yearLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <VenueLinkList data={this.state.data} />
         return (
-            <Navbar bg="light" expand="sm" className="padding-zero">
+            <Navbar bg="light" expand="sm" className = "padding-zero">
                 <Nav >
                     <div className="container bvg">
                         <div className="btn-group-vertical">
-                            {tourLinkListItem}
+                            {yearLinkListItem}
                         </div>
                     </div>
                 </Nav>
@@ -58,4 +58,4 @@ class Tours extends Component {
     }
 }
 
-export default Tours;
+export default Venues

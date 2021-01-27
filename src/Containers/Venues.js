@@ -12,28 +12,49 @@ class Venues extends Component {
             data: [],
             yearLinkListItem: null,
             isLoading: true,
+            totalPages: null,
+            totalEntries: null,
+            page: null,
         }
     }
 
     async componentDidMount() {
-        let page = 0
-        let totalPages = 0
+        try {
+            await axios.get("/venues")
+                .then((res) => {
+                    this.setState({ totalPages: res.data.total_pages + 1, totalEntries: res.data.total_entries })
+                    this.getAllVenuePages()
+                })
+        } catch (err) {
+            // Handle Error Here
+            console.error(err);
+        }
+    }
+
+    async getAllVenuePages() {
+        let pageArray = Array.from(Array(this.state.totalPages).keys())
+        pageArray.shift()
+        console.log(pageArray)
         do {
             try {
-                await axios.get("/venues", { params: { page: ++page } })
-                    .then((res) => {
+                await axios.all(
+                    pageArray.map(page => axios.get("/venues", {
+                        params: { page: page }
+                    }).then((res) => {
                         console.log(res.data)
-                        totalPages = res.data.total_pages
-                        this.state.data = this.state.data.concat(res.data.data)
-                        if (page != 1 && page === totalPages) {
-                            this.setState({ isLoading: false })
-                        }
+                        this.setState({ data: this.state.data.concat(res.data.data) })
                     })
+                    )
+                )
             } catch (err) {
                 // Handle Error Here
                 console.error(err);
             }
-        } while (page < totalPages)
+            console.log(this.state.data.length)
+            console.log(this.state.totalEntries)
+        }
+        while (this.state.data.length < this.state.totalEntries)
+        this.state.isLoading = false
         this.sortTours()
     }
 
@@ -42,13 +63,13 @@ class Venues extends Component {
     }
 
     render() {
-        let yearLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <VenueLinkList data={this.state.data} />
+        let venueLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <VenueLinkList data={this.state.data} />
         return (
-            <Navbar bg="light" expand="sm" className = "padding-zero">
+            <Navbar bg="light" expand="sm" className="padding-zero">
                 <Nav >
                     <div className="container bvg">
                         <div className="btn-group-vertical">
-                            {yearLinkListItem}
+                            {venueLinkListItem}
                         </div>
                     </div>
                 </Nav>

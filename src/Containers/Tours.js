@@ -15,25 +15,65 @@ class Tours extends Component {
         }
     }
 
+    // async componentDidMount() {
+    //     let page = 0
+    //     let totalPages = 0
+    //     do {
+    //         try {
+    //             await axios.get("/tours", { params: { page: ++page } })
+    //                 .then((res) => {
+    //                     console.log(res.data)
+    //                     totalPages = res.data.total_pages
+    //                     this.state.data = this.state.data.concat(res.data.data)
+    //                     if (page != 1 && page === totalPages) {
+    //                         this.setState({ isLoading: false })
+    //                     }
+    //                 })
+    //         } catch (err) {
+    //             // Handle Error Here
+    //             console.error(err);
+    //         }
+    //     } while (page < totalPages)
+    //     this.sortTours()
+    // }
+
     async componentDidMount() {
-        let page = 0
-        let totalPages = 0
+        try {
+            await axios.get("/tours")
+                .then((res) => {
+                    this.setState({ totalPages: res.data.total_pages + 1, totalEntries: res.data.total_entries })
+                    this.getAllTourPages()
+                })
+        } catch (err) {
+            // Handle Error Here
+            console.error(err);
+        }
+    }
+
+    async getAllTourPages() {
+        let pageArray = Array.from(Array(this.state.totalPages).keys())
+        pageArray.shift()
+        console.log(pageArray)
         do {
             try {
-                await axios.get("/tours", { params: { page: ++page } })
-                    .then((res) => {
+                await axios.all(
+                    pageArray.map(page => axios.get("/tours", {
+                        params: { page: page }
+                    }).then((res) => {
                         console.log(res.data)
-                        totalPages = res.data.total_pages
-                        this.state.data = this.state.data.concat(res.data.data)
-                        if (page != 1 && page === totalPages) {
-                            this.setState({ isLoading: false })
-                        }
+                        this.setState({ data: this.state.data.concat(res.data.data) })
                     })
+                    )
+                )
             } catch (err) {
                 // Handle Error Here
                 console.error(err);
             }
-        } while (page < totalPages)
+            console.log(this.state.data.length)
+            console.log(this.state.totalEntries)
+        }
+        while (this.state.data.length < this.state.totalEntries)
+        this.state.isLoading = false
         this.sortTours()
     }
 

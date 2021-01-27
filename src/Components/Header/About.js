@@ -9,7 +9,7 @@ const About = (props) => {
         PhishApp provides a simple, user-friendly interface to navigate the
         vast public archive of audience recordings for the band Phish. You can search for
         a specific show by year, tour, or song. You may also provide a keyword into the 
-        search bar above. Each track of every show is also linked to an audio file and fully 
+        search bar above. Each track is also linked to an audio file and fully 
         playable.
       </div >
       <div className="text-box">

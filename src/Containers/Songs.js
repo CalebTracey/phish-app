@@ -12,7 +12,9 @@ class Songs extends Component {
             data: [],
             tourLinkListItem: null,
             isLoading: true,
-
+            totalPages: null,
+            totalEntries: null,
+            page: null,
         }
     }
 
@@ -48,8 +50,6 @@ class Songs extends Component {
                 // Handle Error Here
                 console.error(err);
             }
-            console.log(this.state.data.length)
-            console.log(this.state.totalEntries)
         }
         while (this.state.data.length < this.state.totalEntries)
         this.state.isLoading = false

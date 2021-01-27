@@ -34,7 +34,6 @@ class Venues extends Component {
     async getAllVenuePages() {
         let pageArray = Array.from(Array(this.state.totalPages).keys())
         pageArray.shift()
-        console.log(pageArray)
         do {
             try {
                 await axios.all(
@@ -50,8 +49,6 @@ class Venues extends Component {
                 // Handle Error Here
                 console.error(err);
             }
-            console.log(this.state.data.length)
-            console.log(this.state.totalEntries)
         }
         while (this.state.data.length < this.state.totalEntries)
         this.state.isLoading = false

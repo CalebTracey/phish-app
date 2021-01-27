@@ -15,9 +15,9 @@ class VenueShow extends Component {
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         try {
-            axios.get("venues/" + this.props.match.params.venue)
+            await axios.get("venues/" + this.props.match.params.venue)
                 .then((res) => {
                     console.log(res.data)
                     this.setState({ data: res.data.data.show_ids, isLoading: false })

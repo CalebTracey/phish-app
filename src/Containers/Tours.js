@@ -12,6 +12,9 @@ class Tours extends Component {
             data: [],
             tourLinkListItem: null,
             isLoading: true,
+            totalPages: null,
+            totalEntries: null,
+            page: null,
         }
     }
 

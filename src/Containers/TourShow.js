@@ -14,12 +14,13 @@ class TourShow extends Component {
         }
     }
 
-    componentDidMount() {
+     componentDidMount() {
         try {
-            axios.get("tours/" + this.props.match.params.id)
+             axios.get("tours/" + this.props.match.params.tour)
                 .then((res) => {
                     console.log(res.data)
-                    this.setState({ data: res.data.show_ids, isLoading: false })
+                    this.setState({ data: res.data.data.shows, isLoading: false })
+                    //this.getShows()
                 })
         } catch (err) {
             // Handle Error Here

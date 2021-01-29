@@ -365,3 +365,33 @@
 .padding-zero {
     padding: 0;
 }
+
+.year-info {
+    margin: 5px;
+    display: flex;
+    flex: 11;
+}
+
+.year-info-show {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;    
+    margin-left: 50px;
+    width: 100px;
+
+
+}
+
+.year-info-year {
+    display: flex;
+    margin-right: 50px;
+    align-items: center;
+    justify-content: flex-start;    
+    flex: 75% 11;
+
+}
+
+.year-info-count {
+    display: flex;
+    margin-left: 10px;
+}

@@ -1,7 +1,8 @@
 import YearLink from './YearLink'
+import Spinner from 'react-bootstrap/Spinner'
 
 const YearLinkList = ({ data }) => {
-    const yearNode = data === undefined ? "Loading..." :
+    const yearNode = data === undefined ? <Spinner animation="border"/> :
         data.map((year) => {
             return (<YearLink year={year} key={year} />)
         });

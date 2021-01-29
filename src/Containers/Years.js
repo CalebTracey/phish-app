@@ -3,6 +3,7 @@ import YearLinkList from '../Components/Year_Components/YearLinkList';
 import axios from '../axios';
 import { Navbar, Nav } from "react-bootstrap"
 import Spinner from 'react-bootstrap/Spinner'
+import YearLinkListWithInfo from '../Components/Year_Components/YearLinkListWithInfo';
 
 class Years extends Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class Years extends Component {
 
     componentDidMount() {
         try {
-            axios.get("/years")
+            axios.get("/years?include_show_counts=true")
                 .then((res) => {
                     this.setState({ data: res.data.data, isLoading: false })
                 })
@@ -27,7 +28,7 @@ class Years extends Component {
     }
 
     render() {
-        let yearLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <YearLinkList data={this.state.data} />
+        let yearLinkListItem = this.state.isLoading ? <Spinner animation="border"/>: <YearLinkListWithInfo data={this.state.data} />
         return (
             <Navbar bg="light" expand="sm" className = "padding-zero">
                 <Nav >

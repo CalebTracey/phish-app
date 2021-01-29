@@ -18,28 +18,6 @@ class Tours extends Component {
         }
     }
 
-    // async componentDidMount() {
-    //     let page = 0
-    //     let totalPages = 0
-    //     do {
-    //         try {
-    //             await axios.get("/tours", { params: { page: ++page } })
-    //                 .then((res) => {
-    //                     console.log(res.data)
-    //                     totalPages = res.data.total_pages
-    //                     this.state.data = this.state.data.concat(res.data.data)
-    //                     if (page != 1 && page === totalPages) {
-    //                         this.setState({ isLoading: false })
-    //                     }
-    //                 })
-    //         } catch (err) {
-    //             // Handle Error Here
-    //             console.error(err);
-    //         }
-    //     } while (page < totalPages)
-    //     this.sortTours()
-    // }
-
     async componentDidMount() {
         try {
             await axios.get("/tours")
@@ -85,7 +63,7 @@ class Tours extends Component {
     }
 
     render() {
-        let tourLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <TourLinkList data={this.state.data} />
+        let tourLinkListItem = this.state.isLoading ? <Spinner animation="border"/>  : <TourLinkList data={this.state.data} />
         return (
             <Navbar bg="light" expand="sm" className="padding-zero">
                 <Nav >

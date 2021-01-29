@@ -28,7 +28,7 @@ class SongShow extends Component {
     }
 
     render() {
-        let showLinkListItem = this.state.isLoading ? <Spinner animation="border" />  : <SongShowLinkList shows={this.state.data} />
+        let showLinkListItem = this.state.isLoading ? <Spinner animation="border"/>  : <SongShowLinkList shows={this.state.data} />
         return (
                 <Navbar bg="light" expand="sm"> 
                     <Nav >

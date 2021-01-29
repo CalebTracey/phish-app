@@ -1,6 +1,4 @@
 import React, { Component, useState, useEffect } from "react";
-import { propTypes } from "react-bootstrap/esm/Image";
-import PropTypes from 'prop-types';
 
 const useAudio = url => {
     const [audio] = useState(new Audio(url));

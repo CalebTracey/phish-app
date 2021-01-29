@@ -379,7 +379,12 @@
     margin-left: 50px;
     width: 100px;
 
+}
 
+.year-info-badge {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;    
 }
 
 .year-info-year {
@@ -393,5 +398,5 @@
 
 .year-info-count {
     display: flex;
-    margin-left: 10px;
+    margin-right: 5px;
 }

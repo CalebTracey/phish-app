@@ -27,7 +27,7 @@ class ShowDetails extends Component {
 
     render() {
         return (
-            this.state.isLoading ? <Spinner animation="border"/> : <Show show={this.state.show}/>
+            this.state.isLoading ? <Spinner animation="border" /> : <Show show={this.state.show} />
         )
     }
 }

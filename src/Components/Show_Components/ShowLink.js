@@ -27,9 +27,9 @@ const ShowLink = ({ show }) => {
   }
 
   return (
-      <Link to={"/PhishApp/shows/" + getDate()} style={{color: "white"}} className="btn btn-primary shows">
-        {getDate()} {getVenueName()}
-      </Link>
+    <Link to={"/PhishApp/shows/" + getDate()} style={{ color: "white" }} className="btn btn-primary shows">
+      {getDate()} {getVenueName()}
+    </Link>
   );
 };
 

@@ -60,7 +60,7 @@ class Venues extends Component {
     }
 
     render() {
-        let venueLinkListItem = this.state.isLoading ? <Spinner animation="border"/> : <VenueLinkList data={this.state.data} />
+        let venueLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <VenueLinkList data={this.state.data} />
         return (
             <Navbar bg="light" expand="sm" className="padding-zero">
                 <Nav >

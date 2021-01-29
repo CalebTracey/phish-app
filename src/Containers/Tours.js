@@ -63,7 +63,7 @@ class Tours extends Component {
     }
 
     render() {
-        let tourLinkListItem = this.state.isLoading ? <Spinner animation="border"/>  : <TourLinkList data={this.state.data} />
+        let tourLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <TourLinkList data={this.state.data} />
         return (
             <Navbar bg="light" expand="sm" className="padding-zero">
                 <Nav >

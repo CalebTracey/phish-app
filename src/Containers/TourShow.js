@@ -14,9 +14,9 @@ class TourShow extends Component {
         }
     }
 
-     componentDidMount() {
+    componentDidMount() {
         try {
-             axios.get("tours/" + this.props.match.params.tour)
+            axios.get("tours/" + this.props.match.params.tour)
                 .then((res) => {
                     console.log(res.data)
                     this.setState({ data: res.data.data.shows, isLoading: false })
@@ -29,17 +29,17 @@ class TourShow extends Component {
     }
 
     render() {
-        let showLinkListItem = this.state.isLoading ? <Spinner animation="border"/>  : <ShowLinkList shows={this.state.data} />
+        let showLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <ShowLinkList shows={this.state.data} />
         return (
-                <Navbar bg="light" expand="sm"> 
-                    <Nav >
-                        <div className="container bvg">
-                            <div className="btn-group-vertical">
-                                {showLinkListItem}
-                            </div>
+            <Navbar bg="light" expand="sm">
+                <Nav >
+                    <div className="container bvg">
+                        <div className="btn-group-vertical">
+                            {showLinkListItem}
                         </div>
-                    </Nav>
-                </Navbar >
+                    </div>
+                </Nav>
+            </Navbar >
 
         );
     }

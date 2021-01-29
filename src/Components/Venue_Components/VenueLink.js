@@ -10,13 +10,16 @@ const VenueLink = (venue) => {
         <Link to={`/PhishApp/venues/${venue.venue.id}`} style={{ color: "white" }} className="btn btn-primary shows">
             <div className="year-info">
                 <h5 className="year-info-year">{venue.venue.name}</h5>
-                <div className="year-info-show"></div>
-                <span class="badge badge-light">
-                    <div className="year-info-badge">
-                        <div className="year-info-count">{venue.venue.shows_count}</div>
-                        <div> {showString} </div>
+                <div className="year-info-show">
+                    <div class="container">
+                        <span class="badge badge-light">
+                            <div className="year-info-badge">
+                                <div className="year-info-count">{venue.venue.shows_count}</div>
+                                <div> {showString} </div>
+                            </div>
+                        </span>
                     </div>
-                </span>
+                </div>
             </div>
         </Link>
     );

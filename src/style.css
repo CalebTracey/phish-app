@@ -367,7 +367,6 @@
 }
 
 .year-info {
-    margin: 5px;
     display: flex;
     flex: 11;
 }
@@ -382,21 +381,23 @@
 }
 
 .year-info-badge {
+    margin: 3px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;    
+    
+
 }
 
 .year-info-year {
     display: flex;
-    margin-right: 50px;
-    align-items: center;
+    margin-right: 100px;
     justify-content: flex-start;    
     flex: 75% 11;
 
 }
 
 .year-info-count {
+
     display: flex;
     margin-right: 5px;
 }

@@ -3,7 +3,7 @@ import YearLinkList from '../Components/Year_Components/YearLinkList';
 import axios from '../axios';
 import { Navbar, Nav } from "react-bootstrap"
 import Spinner from 'react-bootstrap/Spinner'
-import YearLinkListWithInfo from '../Components/Year_Components/YearLinkListWithInfo';
+import YearLinkListWithInfo from '../Components/Year_Components/YearLinkListInfo';
 
 class Years extends Component {
     constructor(props) {

@@ -401,3 +401,27 @@
     display: flex;
     margin-right: 5px;
 }
+
+.show-info {
+    overflow: auto; 
+    display: flex;
+    flex: 11;
+}
+
+.show-info-year {
+
+    display: flex;
+    justify-content: flex-start;    
+    white-space: nowrap;
+    width: 150px;
+
+}
+
+.show-info-venue {
+    display: flex;
+    justify-content: flex-start;    
+    margin-left: 50px;
+    white-space: nowrap;
+    flex: 70% 11;
+
+}

@@ -1,4 +1,4 @@
-import YearLinkWithInfo from './YearLinkWithInfo'
+import YearLinkWithInfo from './YearLinkInfo'
 import Spinner from 'react-bootstrap/Spinner'
 
 

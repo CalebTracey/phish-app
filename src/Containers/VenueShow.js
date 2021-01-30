@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from '../axios';
 import ShowLinkList from '../Components/Show_Components/ShowLinkList';
+import VenueDateCompare from '../Components/Venue_Components/VenueDateCompare'
 import { Navbar, Nav } from "react-bootstrap"
 import Spinner from 'react-bootstrap/Spinner'
 
@@ -8,7 +9,7 @@ class VenueShow extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [],
+             data: [],
             shows: [],
             showLinkListItem: null,
             isLoading: true,
@@ -20,7 +21,7 @@ class VenueShow extends Component {
             await axios.get("venues/" + this.props.match.params.venue)
                 .then((res) => {
                     console.log(res.data)
-                    this.setState({ data: res.data.data.show_ids, isLoading: false })
+                    this.setState({ data: res.data.data.show_ids })
                     this.getShows()
                 })
         } catch (err) {
@@ -29,15 +30,16 @@ class VenueShow extends Component {
         }
     }
 
-    getShows() {
+    async getShows() {
         try {
-            const showNode = this.state.data.map((showId, key) => {
+             await this.state.data.map((showId) => {
                 axios.get("shows/" + showId)
                     .then((res) => {
                         console.log(res.data.data)
                         this.state.shows.push(res.data.data)
                         if (this.state.shows.length === this.state.data.length) {
                             this.setState({ isLoading: false })
+                            this.sortVenueShowDates()
                         }
                     })
             })
@@ -45,6 +47,12 @@ class VenueShow extends Component {
             // Handle Error Here
             console.error(err);
         }
+        
+        
+    }
+
+    sortVenueShowDates() {
+        this.setState({ data: VenueDateCompare(this.state.shows) })
     }
 
     render() {

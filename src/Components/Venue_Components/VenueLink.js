@@ -11,8 +11,8 @@ const VenueLink = (venue) => {
             <div className="year-info">
                 <h5 className="year-info-year">{venue.venue.name}</h5>
                 <div className="year-info-show">
-                    <div class="container">
-                        <span class="badge badge-light">
+                    <div className="container">
+                        <span className="badge badge-light">
                             <div className="year-info-badge">
                                 <div className="year-info-count">{venue.venue.shows_count}</div>
                                 <div> {showString} </div>

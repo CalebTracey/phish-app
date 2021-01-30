@@ -16,7 +16,7 @@ class SongShow extends Component {
 
     componentDidMount() {
         try {
-            axios.get("songs/" + this.props.match.params.id)
+            axios.get("songs/" + this.props.match.params.song)
                 .then((res) => {
                     console.log(res.data)
                     this.setState({ data: res.data.data, isLoading: false })

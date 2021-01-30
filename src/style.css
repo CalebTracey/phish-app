@@ -374,15 +374,15 @@
 .year-info-show {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;    
-    margin-left: 50px;
-    width: 100px;
-
+    justify-content: flex-end;  
+    margin-left: 20px;  
+width: 90px;
 }
 
 .year-info-badge {
     margin: 3px;
     display: flex;
+    justify-content: flex-start;    
     flex-direction: row;
     
 
@@ -390,7 +390,6 @@
 
 .year-info-year {
     display: flex;
-    margin-right: 100px;
     justify-content: flex-start;    
     flex: 75% 11;
 
@@ -413,7 +412,6 @@
     display: flex;
     justify-content: flex-start;    
     white-space: nowrap;
-    width: 150px;
 
 }
 

@@ -424,3 +424,9 @@ width: 90px;
     flex: 70% 11;
 
 }
+
+
+.btn-primary.home-year {
+    display: flex;
+    align-items: center;
+}

@@ -3,9 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import PhishApp from './PhishApp';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux'
+import store from './Redux/store/index'
 
 ReactDOM.render(
-    <PhishApp />,
+  <Provider store={store}>
+    <PhishApp />
+  </Provider>,
   document.getElementById('root')
 );
 

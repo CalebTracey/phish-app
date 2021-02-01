@@ -1,5 +1,11 @@
 export const FETCH_LIST_DETAILS = "FETCH_LIST_DETAILS";
 export const SET_LIST_DETAILS = "SET_LIST_DETAILS";
+export const SET_YEARS = "SET_YEARS";
+export const FETCH_YEARS = "FETCH_YEARS";
+export const SET_SHOWS = "SET_SHOWS";
+export const FETCH_SHOWS = "FETCH_SHOWS";
+export const SET_TOURS = "SET_TOURS";
+export const FETCH_TOURS = "FETCH_TOURS";
 
 export const API = "API";
 export const API_START = "API_START";

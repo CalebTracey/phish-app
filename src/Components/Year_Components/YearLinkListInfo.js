@@ -1,15 +1,15 @@
-import YearLinkWithInfo from './YearLinkInfo'
+import YearLinkInfo from './YearLinkInfo'
 import Spinner from 'react-bootstrap/Spinner'
-
-
 import React from 'react';
 
-const YearLinkListWithInfo = ({ data }) => {
-    const yearNode = data === undefined ? <Spinner animation="border" /> :
-        data.reverse().map((year) => {
-            return (<YearLinkWithInfo year={year.date} key={year.date} showCount={year.show_count} />)
+const YearLinkListInfo = ({ data }) => {
+
+    const yearArr = Array.from(Object.values(data))
+    const yearNode = !yearArr.length > 0 ? <Spinner animation="border" /> :
+    yearArr.reverse().map((year) => {
+            return (<YearLinkInfo year={year.date} key={year.date} showCount={year.show_count} />)
         });
     return (yearNode);
 }
 
-export default YearLinkListWithInfo
+export default YearLinkListInfo

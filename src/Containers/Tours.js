@@ -4,7 +4,7 @@ import axios from '../axios';
 import { Navbar, Nav } from "react-bootstrap"
 import Spinner from 'react-bootstrap/Spinner'
 import React, { Component } from 'react';
-import { getTours } from "../actions";
+import { getTours } from "../Redux/actions/tours";
 import ErrorBoundary from "../ErrorBoundary"
 import { connect } from "react-redux";
 
@@ -73,7 +73,8 @@ class Tours extends Component {
     }
 
     render() {
-        let tourLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <TourLinkList data={this.state.data} />
+        const {tours, isLoadingData} = this.props
+        let tourLinkListItem = isLoadingData || tours === undefined ? <Spinner animation="border" /> : <TourLinkList tours={tours} />
         return (
             <ErrorBoundary>
                 <Navbar bg="light" expand="sm" className="padding-zero">
@@ -92,8 +93,8 @@ class Tours extends Component {
     }
 }
 
-const mapStateToProps = ({ data = {}, isLoadingData = false }) => ({
-    data,
+const mapStateToProps = ({ tours = {}, isLoadingData = false }) => ({
+    tours,
     isLoadingData
   });
   export default connect(

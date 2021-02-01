@@ -3,34 +3,46 @@ import axios from '../axios';
 import ShowLinkList from '../Components/Show_Components/ShowLinkList';
 import { Navbar, Nav } from "react-bootstrap"
 import Spinner from 'react-bootstrap/Spinner'
+import { getYearShow } from "../Redux/actions/shows";
+import { connect } from "react-redux";
+import ErrorBoundary from "../ErrorBoundary"
 
 class YearShow extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: [],
-            showLinkListItem: null,
-            isLoading: true,
-        }
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         data: [],
+    //         showLinkListItem: null,
+    //         isLoading: true,
+    //     }
+    // }
+    state = {}
+
+    // componentDidMount() {
+    //     try {
+    //         axios.get("years/" + this.props.match.params.year)
+    //             .then((res) => {
+    //                 console.log(res.data)
+    //                 this.setState({ data: res.data.data, isLoading: false })
+    //             })
+    //     } catch (err) {
+    //         // Handle Error Here
+    //         console.error(err);
+    //     }
+    // }
 
     componentDidMount() {
-        try {
-            axios.get("years/" + this.props.match.params.year)
-                .then((res) => {
-                    console.log(res.data)
-                    this.setState({ data: res.data.data, isLoading: false })
-                })
-        } catch (err) {
-            // Handle Error Here
-            console.error(err);
-        }
+        this.props.getYearShow(this.props.match.params.year);
+        //this.props.match.params.year
+
     }
 
     render() {
-        let showLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <ShowLinkList shows={this.state.data} />
+        const { shows, isLoadingData } = this.props
+        let showLinkListItem = isLoadingData || shows === undefined ? <Spinner animation="border" /> : <ShowLinkList data={shows} />
         return (
-            <Navbar bg="light" expand="sm">
+            <ErrorBoundary>
+                <Navbar bg="light" expand="sm">
                 <Nav >
                     <div className="container bvg">
                         <div className="btn-group-vertical">
@@ -39,9 +51,20 @@ class YearShow extends Component {
                     </div>
                 </Nav>
             </Navbar >
+            </ErrorBoundary>
+            
 
         );
     }
 }
 
-export default YearShow
+const mapStateToProps = ({ shows = {}, isLoadingData = false }) => ({
+    shows,
+    isLoadingData
+  });
+  export default connect(
+    mapStateToProps,
+    {
+        getYearShow
+    }
+  )(YearShow);

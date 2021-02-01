@@ -1,23 +1,23 @@
 import { SET_LIST_DETAILS, API, FETCH_LIST_DETAILS } from "./types";
 
-export function getYears() {
+export function getData(apiUrl) {
     return apiAction({
-        url: "/years?include_show_counts=true",
+        url: apiUrl,
         onSuccess: setListDetails,
         onFailure: () => console.log("Error occured loading years"),
         label: FETCH_LIST_DETAILS
     });
 }
 
-export function getTours() {
-    return apiAction({
-        url: "/tours",
-        //onSuccess: setListDetails,
-        onSuccess: checkPages,
-        onFailure: () => console.log("Error occured loading tours"),
-        label: FETCH_LIST_DETAILS
-    });
-}
+// export function getTours() {
+//     return apiAction({
+//         url: "/tours",
+//         //onSuccess: setListDetails,
+//         onSuccess: checkPages,
+//         onFailure: () => console.log("Error occured loading tours"),
+//         label: FETCH_LIST_DETAILS
+//     });
+// }
 
 function setListDetails(data) {
     return {
@@ -25,18 +25,18 @@ function setListDetails(data) {
         payload: data
     };
 }
-function checkPages(data) {
-    //console.log(data.total_pages)
-    for (var i = 0; i < data.total_pages; i++) {
-        console.log(i)
-        setListDetails(data)
-    }
-}
+// function checkPages(data) {
+//     //console.log(data.total_pages)
+//     for (var i = 0; i < data.total_pages; i++) {
+//         console.log(i)
+//         setListDetails(data)
+//     }
+// }
 function apiAction({
     url = "",
     method = "GET",
     data = null,
-    accessToken = null,
+    //accessToken = null,
     onSuccess = () => { },
     onFailure = () => { },
     label = "",

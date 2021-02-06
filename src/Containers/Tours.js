@@ -1,29 +1,65 @@
 import TourLinkList from '../Components/Tour_Components/TourLinkList';
 import TourCompare from '../Components/Tour_Components/TourCompare'
-import axios from '../axios';
 import { Navbar, Nav } from "react-bootstrap"
 import Spinner from 'react-bootstrap/Spinner'
-import React, { Component } from 'react';
-import { getTours } from "../Redux/actions/tours";
+import React, { useEffect } from 'react';
+import allActions from "../Redux/actions";
 import ErrorBoundary from "../ErrorBoundary"
-import { connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
-class Tours extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         data: [],
-    //         tourLinkListItem: null,
-    //         isLoading: true,
-    //         totalPages: null,
-    //         totalEntries: null,
-    //         page: null,
-    //     }
-    // }
+const Tours = () => {
+    
+    const tourList = useSelector(state => state.tours.tourList)
+    const isLoadingData = useSelector(state => state.tours.isLoadingData)
 
-    state = {}
+    const dispatch = useDispatch()
 
-    // async componentDidMount() {
+    useEffect(() => {
+        if (tourList === undefined) {
+            dispatch(allActions.toursAction.getTours())
+        }
+    }, [dispatch, tourList])
+
+    //let tourLinkListItem = isLoadingData || tours === undefined ? <Spinner animation="border" /> : <TourLinkList tours={tours} />
+
+    return ( 
+        isLoadingData ? 
+        <Spinner animation="border" /> :
+        <ErrorBoundary>
+            <Navbar bg="light" expand="sm" className="padding-zero">
+                <Nav >
+                    <div className="container bvg">
+                        <div className="btn-group-vertical">
+                        <TourLinkList tourList={tourList} />
+                        </div>
+                    </div>
+                </Nav>
+            </Navbar>
+        </ErrorBoundary>
+    );
+}
+
+export default Tours;
+
+
+
+// const mapStateToProps = ({ tours = {}, isLoadingData = false }) => ({
+//     tours,
+//     isLoadingData
+//   });
+//   export default connect(
+//     mapStateToProps,
+//     {
+//         getTours
+//     }
+//   )(Tours);
+
+
+/**
+ * OLD CODE
+ *
+ */
+      // async componentDidMount() {
     //     try {
     //         await axios.get("/tours")
     //             .then((res) => {
@@ -66,40 +102,3 @@ class Tours extends Component {
     // sortTours() {
     //     this.setState({ data: TourCompare(this.state.data) })
     // }
-
-    componentDidMount() {
-        
-        this.props.getTours();
-    }
-
-    render() {
-        const {tours, isLoadingData} = this.props
-        let tourLinkListItem = isLoadingData || tours === undefined ? <Spinner animation="border" /> : <TourLinkList tours={tours} />
-        return (
-            <ErrorBoundary>
-                <Navbar bg="light" expand="sm" className="padding-zero">
-                <Nav >
-                    <div className="container bvg">
-                        <div className="btn-group-vertical">
-                            {tourLinkListItem}
-                        </div>
-                    </div>
-                </Nav>
-            </Navbar>
-            </ErrorBoundary>
-            
-
-        );
-    }
-}
-
-const mapStateToProps = ({ tours = {}, isLoadingData = false }) => ({
-    tours,
-    isLoadingData
-  });
-  export default connect(
-    mapStateToProps,
-    {
-        getTours
-    }
-  )(Tours);

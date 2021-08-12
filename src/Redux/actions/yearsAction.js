@@ -1,17 +1,21 @@
-import { SET_TOURS, API, FETCH_TOURS } from "./types";
+import {
+    SET_YEARS,
+    API,
+    FETCH_YEARS,
+}
+    from "./types";
 
-export function getTours() {
+const getYears = () => {
     return apiAction({
-        url: "/tours",
-        onSuccess: setTours,
+        url: "/years?include_show_counts=true",
+        onSuccess: setYears,
         onFailure: () => console.log("Error occured loading years"),
-        label: FETCH_TOURS
+        label: FETCH_YEARS
     });
 }
-
-function setTours(data) {
+function setYears(data) {
     return {
-        type: SET_TOURS,
+        type: SET_YEARS,
         payload: data
     };
 }
@@ -40,3 +44,13 @@ function apiAction({
         }
     };
 }
+
+
+
+
+export default {getYears}
+
+
+
+
+

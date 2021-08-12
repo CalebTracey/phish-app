@@ -1,13 +1,26 @@
-import { SET_LIST_DETAILS, API, FETCH_LIST_DETAILS } from "./types";
+import toursAction from './toursAction'
+import showsAction from './showsAction'
+import yearsAction from './yearsAction'
 
-export function getData(apiUrl) {
-    return apiAction({
-        url: apiUrl,
-        onSuccess: setListDetails,
-        onFailure: () => console.log("Error occured loading years"),
-        label: FETCH_LIST_DETAILS
-    });
+const allActions = {
+    toursAction,
+    yearsAction,
+    showsAction,
 }
+
+export default allActions
+
+
+// import { SET_LIST_DETAILS, API, FETCH_LIST_DETAILS } from "./types";
+
+// export function getData(apiUrl) {
+//     return apiAction({
+//         url: apiUrl,
+//         onSuccess: setListDetails,
+//         onFailure: () => console.log("Error occured loading years"),
+//         label: FETCH_LIST_DETAILS
+//     });
+// }
 
 // export function getTours() {
 //     return apiAction({
@@ -19,12 +32,12 @@ export function getData(apiUrl) {
 //     });
 // }
 
-function setListDetails(data) {
-    return {
-        type: SET_LIST_DETAILS,
-        payload: data
-    };
-}
+// function setListDetails(data) {
+//     return {
+//         type: SET_LIST_DETAILS,
+//         payload: data
+//     };
+// }
 // function checkPages(data) {
 //     //console.log(data.total_pages)
 //     for (var i = 0; i < data.total_pages; i++) {
@@ -32,27 +45,27 @@ function setListDetails(data) {
 //         setListDetails(data)
 //     }
 // }
-function apiAction({
-    url = "",
-    method = "GET",
-    data = null,
-    //accessToken = null,
-    onSuccess = () => { },
-    onFailure = () => { },
-    label = "",
-    headersOverride = null
-}) {
-    return {
-        type: API,
-        payload: {
-            url,
-            method,
-            data,
-            //accessToken,
-            onSuccess,
-            onFailure,
-            label,
-            headersOverride
-        }
-    };
-}
+// function apiAction({
+//     url = "",
+//     method = "GET",
+//     data = null,
+//     //accessToken = null,
+//     onSuccess = () => { },
+//     onFailure = () => { },
+//     label = "",
+//     headersOverride = null
+// }) {
+//     return {
+//         type: API,
+//         payload: {
+//             url,
+//             method,
+//             data,
+//             //accessToken,
+//             onSuccess,
+//             onFailure,
+//             label,
+//             headersOverride
+//         }
+//     };
+// }

@@ -1,13 +1,15 @@
 import YearLinkInfo from './YearLinkInfo'
 import Spinner from 'react-bootstrap/Spinner'
 import React from 'react';
+import { useSelector, } from "react-redux";
 
-const YearLinkListInfo = ({ data }) => {
 
-    const yearArr = Array.from(Object.values(data))
-    const yearNode = !yearArr.length > 0 ? <Spinner animation="border" /> :
-    yearArr.reverse().map((year) => {
-            return (<YearLinkInfo year={year.date} key={year.date} showCount={year.show_count} />)
+const YearLinkListInfo = ({ yearList }) => {
+    console.log(yearList)
+
+    const yearNode = yearList === undefined ? <Spinner animation="border" /> :
+        yearList.reverse().map((year, key) => {
+            return (<YearLinkInfo year={year.date} key={key} showCount={year.show_count} />)
         });
     return (yearNode);
 }

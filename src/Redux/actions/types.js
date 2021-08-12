@@ -6,6 +6,8 @@ export const SET_SHOWS = "SET_SHOWS";
 export const FETCH_SHOWS = "FETCH_SHOWS";
 export const SET_TOURS = "SET_TOURS";
 export const FETCH_TOURS = "FETCH_TOURS";
+export const FETCHING_TOURS = "FETCHING_TOURS";
+export const SET_YEAR = "SET_YEAR";
 
 export const API = "API";
 export const API_START = "API_START";

@@ -1,19 +1,31 @@
-import { SET_YEARS, API, FETCH_YEARS } from "./types";
+import {
+    SET_SHOWS,
+    API,
+    FETCH_SHOWS,
+    SET_YEAR
+} from "./types";
 
-export function getYears() {
+const getYearShows = (year) => {
     return apiAction({
-        url: "/years?include_show_counts=true",
-        onSuccess: setYears,
+        url: "/years/" + year,
+        onSuccess: setYearShows,
         onFailure: () => console.log("Error occured loading years"),
-        label: FETCH_YEARS
+        label: FETCH_SHOWS
     });
 }
 
-function setYears(data) {
+function setYearShows(data) {
     return {
-        type: SET_YEARS,
+        type: SET_SHOWS,
         payload: data
     };
+}
+
+function setYear(year) {
+    return {
+        type: SET_YEAR,
+        payload: year
+    }
 }
 
 function apiAction({
@@ -40,3 +52,7 @@ function apiAction({
         }
     };
 }
+const allExports = {getYearShows, setYear}
+export default allExports
+    
+

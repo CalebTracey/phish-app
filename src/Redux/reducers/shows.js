@@ -8,30 +8,32 @@ import {
 
 /**
  * Shows Reducer
- * 
- * @param {*} state 
- * @param {*} action 
+ *
+ * @param {*} state
+ * @param {*} action
  */
 
-
-const shows = (state = {isLoadingData: {}, year: {}, showList: {}}, action) =>{
+const shows = (
+  state = { isLoadingData: [], year: {}, showList: [] },
+  action
+) => {
   console.log("action type => ", action.type);
   switch (action.type) {
     case SET_SHOWS:
       return {
         ...state,
-        showList: action.payload.data
-    };
+        showList: action.payload.data,
+      };
     case SET_YEAR:
       return {
         ...state,
-        year: action.payload
-      }
+        year: action.payload,
+      };
     case API_START:
       if (action.payload === FETCH_SHOWS) {
         return {
           ...state,
-          isLoadingData: true
+          isLoadingData: true,
         };
       }
       break;
@@ -39,13 +41,12 @@ const shows = (state = {isLoadingData: {}, year: {}, showList: {}}, action) =>{
       if (action.payload === FETCH_SHOWS) {
         return {
           ...state,
-          isLoadingData: false
+          isLoadingData: false,
         };
       }
       break;
     default:
-    }
-      return state;
-  
-}
-export default shows
+  }
+  return state;
+};
+export default shows;

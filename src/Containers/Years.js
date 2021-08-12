@@ -1,44 +1,40 @@
-import React, { useEffect } from 'react';
-import { Navbar, Nav } from "react-bootstrap"
-import Spinner from 'react-bootstrap/Spinner'
-import YearLinkListInfo from '../Components/Year_Components/YearLinkListInfo';
-import ErrorBoundary from "../ErrorBoundary"
+import React, { useEffect } from "react";
+import { Navbar, Nav } from "react-bootstrap";
+import Spinner from "react-bootstrap/Spinner";
+import YearLinkListInfo from "../Components/Year_Components/YearLinkListInfo";
+import ErrorBoundary from "../ErrorBoundary";
 import allActions from "../Redux/actions";
 import { useSelector, useDispatch } from "react-redux";
 
 const Years = () => {
+  const yearList = useSelector((state) => state.years.yearList);
+  const isLoadingData = useSelector((state) => state.years.isLoadingData);
 
-    const yearList = useSelector(state => state.years.yearList)
-    const isLoadingData = useSelector(state => state.years.isLoadingData)
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch()
+  useEffect(() => {
+    if (yearList === undefined) {
+      dispatch(allActions.yearsAction.getYears());
+    }
+  }, [dispatch, yearList]);
 
-    useEffect(() => {
-        if (yearList === undefined) {
-            dispatch(allActions.yearsAction.getYears())
-        }
-    }, [dispatch, yearList])
-
-
-    return (
-        //Object.values(yearsList).length > 0 ?
-        isLoadingData ?
-            <Spinner animation="border" /> :
-            <ErrorBoundary>
-                <Navbar bg="light" expand="sm" className="padding-zero">
-                    <Nav >
-                        <div className="container bvg">
-                            <div className="btn-group-vertical">
-                                {console.log(yearList)}
-                                <YearLinkListInfo yearList={yearList} />
-                            </div>
-                        </div>
-                    </Nav>
-                </Navbar>
-            </ErrorBoundary>
-
-    );
-}
+  return isLoadingData ? (
+    <Spinner animation="border" />
+  ) : (
+    <ErrorBoundary>
+      <Navbar bg="light" expand="sm" className="padding-zero">
+        <Nav>
+          <div className="container bvg">
+            <div className="btn-group-vertical">
+              {console.log(yearList)}
+              <YearLinkListInfo yearList={yearList} />
+            </div>
+          </div>
+        </Nav>
+      </Navbar>
+    </ErrorBoundary>
+  );
+};
 
 export default Years;
 
@@ -72,7 +68,6 @@ export default Years;
 //     //         nextState = this.state
 //     //         return true
 //     //     }
-
 
 //     render() {
 //         const { years, isLoadingData } = this.props;

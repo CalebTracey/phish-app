@@ -1,5 +1,5 @@
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
-import React, { Component } from 'react';
+import React, { Component } from 'react/';
 import { withRouter } from "react-router-dom";
 import Player from './Player'
 import './../../style.css';

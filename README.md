@@ -1,16 +1,22 @@
-This project was created to learn and gain experience in web app development with React.
+# Phish App
+## Demo
 
-This app provides a simple, user-friendly interface to navigate the vast public archive of audience recordings for the band Phish. You can search for a specific 
-show by year, tour, or song. You may also provide a keyword into the search bar above. Each track of every show is also linked to an audio file and fully playable.
+Here is a working live demo: [https://calebtracey.github.io/PhishApp/#/](https://calebtracey.github.io/PhishApp/#/)
+ * <i>not intended for mobile</i> 
+## Overview
 
-The required data is gathered using an API provided by [Phish.in](http://http://phish.in/). Queries are done in real time and based upon the user's input. The
-resulting data is then used to provide an interface to further refine your search until the desired show has been found. The app was built using the React library
-and utilizes the Node.js run-time environment. HTTP requests are done through Node.js using the Axios library. Styling comprises of CSS elements from the Bootstrap
-front-end framework.
+This project was my first using React.
+
+Navigate the vast database of live audience recordings through the left-hand sidebar.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+API provided by [Phish.in](http://http://phish.in/).
+
+## Usage
+
+1. Fork this repo.
+2. Navigate to the project directory and use the following scripts:
 
 In the project directory, you can run:
 

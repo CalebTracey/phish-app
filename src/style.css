@@ -78,9 +78,9 @@
 }
 
 .field {
-  color: white;
+  color: #fafafa;
   box-shadow: 1px 1px 2px black;
-  text-shadow: 1px 1px 2px #000000;
+  text-shadow: 0.15rem 0.1rem #434343;
   padding: 5px;
   border-radius: 5px;
   margin: 20px;
@@ -90,9 +90,9 @@
 }
 
 .set-title {
-  color: white;
+  color: #fafafa;
   box-shadow: 1px 1px 2px black;
-  text-shadow: 1px 1px 2px #000000;
+  text-shadow: 0.15rem 0.1rem #434343;
   margin: 3px;
   font-size: 16px;
   font-size: 2.5vw;
@@ -110,7 +110,7 @@
 .set-header {
   color: white;
   box-shadow: 1px 1px 2px black;
-  text-shadow: 1px 1px 2px #000000;
+  /* text-shadow: 0.15rem 0.1rem #434343; */
   flex-direction: row;
   border-radius: 5px;
   background: #3399ff;
@@ -124,8 +124,8 @@
 }
 
 .set-header-field {
-  color: white;
-  text-shadow: 1px 1px 2px #000000;
+  color: #f0f0f0;
+  text-shadow: 0;
   align-content: space-around;
   margin-bottom: 0;
   display: flex;
@@ -135,8 +135,8 @@
 }
 
 .set-header-field-length {
-  color: white;
-  text-shadow: 1px 1px 2px #000000;
+  color: #f0f0f0;
+  text-shadow: 0;
   align-content: space-around;
   margin-bottom: 0;
   display: flex;

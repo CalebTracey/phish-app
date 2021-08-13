@@ -7,7 +7,7 @@ Here is a working live demo: [https://calebtracey.github.io/PhishApp/#/](https:/
 
 This project was my first using React.
 
-Navigate the vast database of live audience recordings through the left hand sidebar.
+Navigate the vast database of live audience recordings through the left-hand sidebar.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

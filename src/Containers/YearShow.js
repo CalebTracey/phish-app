@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ShowLinkList from "../Components/Show_Components/ShowLinkList";
 import { Navbar, Nav } from "react-bootstrap";
 import Spinner from "react-bootstrap/Spinner";
@@ -9,21 +9,16 @@ import { useSelector, useDispatch } from "react-redux";
 const YearShow = () => {
   const year = useSelector((state) => state.shows.year);
   const showsList = useSelector((state) => state.shows.showList);
-  //   const isLoadingData = useSelector((state) => state.shows.isLoadingData);
-  const [isLoading, setIsLoading] = useState(true);
+  const isLoadingData = useSelector((state) => state.shows.isLoadingData);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (showsList.length === 0) {
+    if (year) {
       dispatch(allActions.showsAction.getYearShows(year));
     }
-  }, [showsList, year, dispatch]);
+  }, [year, dispatch]);
 
-  useEffect(() => {
-    if (showsList) setIsLoading(false);
-  }, [showsList]);
-
-  return isLoading ? (
+  return isLoadingData ? (
     <Spinner animation="border" />
   ) : (
     <ErrorBoundary>

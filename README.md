@@ -1,4 +1,5 @@
 # Phish App
+![](phishapp.gif)
 ## Demo
 
 Here is a working live demo: [https://calebtracey.github.io/PhishApp/#/](https://calebtracey.github.io/PhishApp/#/)

@@ -5,11 +5,13 @@ Here is a working live demo: [https://calebtracey.github.io/PhishApp/#/](https:/
  * <i>not intended for mobile</i> 
 ## Overview
 
-This project was my first using React. API provided by [Phish.in](http://http://phish.in/).
+This project was my first using React.
 
 Navigate the vast database of live audience recordings through the left hand sidebar.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+API provided by [Phish.in](http://http://phish.in/).
 
 ## Usage
 

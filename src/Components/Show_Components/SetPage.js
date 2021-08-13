@@ -15,12 +15,12 @@ const SetPage = ({ tracks, setKey }) => {
   const setTimeString = time.toISOString().substr(11, 8);
 
   return (
-    <div>
+    <>
       <SetHeader duration={setTimeString} setKey={setKey} />
       <div className="list-group">
         <TrackList tracks={setTracks} setKey={setKey} />
       </div>
-    </div>
+    </>
   );
 };
 

@@ -28,7 +28,6 @@ class Venues extends Component {
         this.getAllVenuePages();
       });
     } catch (err) {
-      // Handle Error Here
       console.error(err);
     }
   }
@@ -51,7 +50,6 @@ class Venues extends Component {
           )
         );
       } catch (err) {
-        // Handle Error Here
         console.error(err);
       }
     } while (this.state.data.length < this.state.totalEntries);

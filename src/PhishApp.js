@@ -21,9 +21,9 @@ const PhishApp = () => {
   return (
     <div className="wrapper">
       <Router>
-        <audio className="audio-element">
+        {/* <audio className="audio-element">
           <source id="audio-element-source"></source>
-        </audio>
+        </audio> */}
         <TopNavBar />
         <div className="side-and-content">
           <Sidebar />
@@ -32,7 +32,11 @@ const PhishApp = () => {
               <Route exact path="/" component={Home} />
               <Route exact path="/PhishApp" component={Home} />
               <Route exact path="/PhishApp/about" component={About} />
-              <Route exact path="/PhishApp/search?term=:searchText" component={Search} />
+              <Route
+                exact
+                path="/PhishApp/search?term=:searchText"
+                component={Search}
+              />
               <Route exact path="/PhishApp/tours" component={Tours} />
               <Route exact path="/PhishApp/songs" component={Songs} />
               <Route exact path="/PhishApp/years" component={Years} />
@@ -49,7 +53,6 @@ const PhishApp = () => {
         <div className="footer">&copy; 2021 Caleb Tracey</div>
       </Router>
     </div>
-
   );
 };
 

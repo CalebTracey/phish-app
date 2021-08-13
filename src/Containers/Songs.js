@@ -28,7 +28,6 @@ class Songs extends Component {
         this.getAllSongPages();
       });
     } catch (err) {
-      // Handle Error Here
       console.error(err);
     }
   }
@@ -46,7 +45,6 @@ class Songs extends Component {
                 params: { page: page },
               })
               .then((res) => {
-                console.log(res.data);
                 this.setState({ data: this.state.data.concat(res.data.data) });
               })
           )

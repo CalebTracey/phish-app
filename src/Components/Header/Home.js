@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import YearLinkList from '../Year_Components/YearLinkList';
-import axios from '../../axios';
+import React, { Component } from "react";
+import YearLinkList from "../Year_Components/YearLinkList";
+import axios from "../../axios";
 import { Nav } from "react-bootstrap";
-import Spinner from 'react-bootstrap/Spinner'
+import Spinner from "react-bootstrap/Spinner";
 
 class Home extends Component {
   constructor(props) {
@@ -11,15 +11,14 @@ class Home extends Component {
       data: [],
       yearLinkListItem: null,
       isLoading: true,
-    }
+    };
   }
 
   componentDidMount() {
     try {
-      axios.get("/years")
-        .then((res) => {
-          this.setState({ data: res.data.data, isLoading: false })
-        })
+      axios.get("/years").then((res) => {
+        this.setState({ data: res.data.data, isLoading: false });
+      });
     } catch (err) {
       // Handle Error Here
       console.error(err);
@@ -27,29 +26,28 @@ class Home extends Component {
   }
 
   render() {
-    let yearLinkListItem = this.state.isLoading ? <Spinner animation="border"/> : <YearLinkList data={this.state.data} />
-    return (
-
+    return this.state.isLoading ? (
+      <Spinner animation="border" />
+    ) : (
       <div className="container">
-        < div className="hero-image">
+        <div className="hero-image">
           <div className="hero-text">
-            <h1 >PhishApp</h1>
+            <h1>PhishApp</h1>
             <p>Organized Audience Recordings</p>
           </div>
         </div>
-        <div >
-            <Nav >
-              <div className="container bg">
-                <div className="btn-group">
-                  {yearLinkListItem}
-                </div>
+        <div>
+          <Nav>
+            <div className="container bg">
+              <div className="btn-group">
+                <YearLinkList data={this.state.data} />
               </div>
-            </Nav>
+            </div>
+          </Nav>
         </div>
       </div>
     );
   }
 }
 
-export default Home
-
+export default Home;

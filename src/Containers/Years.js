@@ -26,7 +26,6 @@ const Years = () => {
         <Nav>
           <div className="container bvg">
             <div className="btn-group-vertical">
-              {console.log(yearList)}
               <YearLinkListInfo yearList={yearList} />
             </div>
           </div>

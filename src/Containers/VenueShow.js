@@ -24,7 +24,6 @@ class VenueShow extends Component {
         this.getShows();
       });
     } catch (err) {
-      // Handle Error Here
       console.error(err);
     }
   }
@@ -33,7 +32,6 @@ class VenueShow extends Component {
     try {
       await this.state.data.map((showId) => {
         axios.get("shows/" + showId).then((res) => {
-          console.log(res.data.data);
           this.state.shows.push(res.data.data);
           if (this.state.shows.length === this.state.data.length) {
             this.setState({ isLoading: false });
@@ -42,7 +40,6 @@ class VenueShow extends Component {
         });
       });
     } catch (err) {
-      // Handle Error Here
       console.error(err);
     }
   }
@@ -52,11 +49,6 @@ class VenueShow extends Component {
   }
 
   render() {
-    // let showLinkListItem = this.state.isLoading ? (
-    //   <Spinner animation="border" />
-    // ) : (
-    //   <ShowLinkList showsList={this.state.shows} />
-    // );
     return this.state.isLoading ? (
       <Spinner animation="border" />
     ) : (

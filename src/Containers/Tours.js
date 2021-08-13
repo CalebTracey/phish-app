@@ -25,7 +25,6 @@ class Tours extends Component {
         this.getAllTourPages();
       });
     } catch (err) {
-      // Handle Error Here
       console.error(err);
     }
   }
@@ -43,13 +42,11 @@ class Tours extends Component {
                 params: { page: page },
               })
               .then((res) => {
-                console.log(res.data);
                 this.setState({ data: this.state.data.concat(res.data.data) });
               })
           )
         );
       } catch (err) {
-        // Handle Error Here
         console.error(err);
       }
     } while (this.state.data.length < this.state.totalEntries);

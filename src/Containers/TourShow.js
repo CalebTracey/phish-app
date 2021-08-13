@@ -19,17 +19,13 @@ class TourShow extends Component {
       axios.get("tours/" + this.props.match.params.tour).then((res) => {
         console.log(res.data);
         this.setState({ data: res.data.data.shows, isLoading: false });
-        //this.getShows()
       });
     } catch (err) {
-      // Handle Error Here
       console.error(err);
     }
   }
 
   render() {
-    // let showLinkListItem = this.state.isLoading ? <Spinner animation="border" /> : <ShowLinkList shows={this.state.data} />
-    // return (
     return this.state.isLoading ? (
       <Spinner animation="border" />
     ) : (
